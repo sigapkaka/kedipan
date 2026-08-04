@@ -144,18 +144,19 @@ async function loadData() {
 
         const response = await fetch(API + "?action=getInitialData");
 
-console.log("Status:", response.status);
+        console.log("Status:", response.status);
 
-const text = await response.text();
+        const hasil = await response.json();
 
-console.log(text);
-
-return;
+        console.log(hasil);
 
         dataHarga = hasil;
         dataTampil = hasil;
 
         tampilkanTabel(dataTampil);
+
+        loadKomoditasSlider();
+
         loadGrafik();
 
     } catch (err) {
