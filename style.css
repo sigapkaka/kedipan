@@ -3713,3 +3713,23 @@ SLIDER KOMODITAS PANGAN
     color:rgba(255,255,255,.75);
 
 }
+
+@media (max-width:768px){
+
+    .komoditas-track{
+
+        gap:12px;
+
+        padding:0 10px;
+
+    }
+
+    .komoditas-item{
+
+        width:115px;
+
+        min-width:115px;
+
+    }
+
+}
