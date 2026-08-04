@@ -760,7 +760,8 @@ switch(item.ketersediaan){
 
         track.innerHTML = html + html;
 
-        catch(err){
+} 
+    catch(err){
 
         console.error(err);
 
