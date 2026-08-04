@@ -149,6 +149,7 @@ async function loadData() {
         const hasil = await response.json();
 
         console.log(hasil);
+        console.log("JUMLAH:", hasil.length);
 
         dataHarga = hasil;
         dataTampil = hasil;
