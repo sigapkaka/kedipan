@@ -126,7 +126,6 @@ HEADER
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
     background-size:200% 200%;
-    animation:headerGradient 12s ease infinite;
     position:relative;
 }
 
@@ -197,8 +196,6 @@ margin-bottom:20px;
 display:inline-block;
 
 padding-left:100%;
-
-animation:running 22s linear infinite;
 
 font-weight:500;
 
@@ -952,10 +949,6 @@ EMOJI KOMODITAS
         drop-shadow(
             0 5px 5px rgba(0,0,0,.14)
         );
-
-    animation:
-        komoditasFloat 3s ease-in-out infinite;
-
 }
 
 
@@ -2541,8 +2534,6 @@ FRAME TEPI BODY - HP
 
     transform:scale(1);
 
-    animation:kenburns 10s ease-in-out forwards;
-
     transition:opacity .5s ease;
 
 }
@@ -2711,8 +2702,6 @@ BADGE TREN HARGA
 
     border:1px solid #75d6a2;
 
-    animation:naik 1.5s ease-in-out infinite;
-
 }
 
 .badge-turun{
@@ -2722,8 +2711,6 @@ BADGE TREN HARGA
     color:#b42318;
 
     border:1px solid #f5a3a3;
-
-    animation:turun 1.5s ease-in-out infinite;
 
 }
 
