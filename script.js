@@ -147,6 +147,7 @@ async function loadData() {
         console.log("Status:", response.status);
 
         const hasil = await response.json();
+        alert("Jumlah data: " + hasil.length);
 
         console.log(hasil);
         console.log("JUMLAH:", hasil.length);
