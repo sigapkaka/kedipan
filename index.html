@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIGAP KAKA</title>
+
+<link rel="preload" as="image" href="img/logo-kabupaten.png">
+
+<link rel="preload" as="image" href="img/logo-sigap.png">
+
+<link rel="preload" as="image" href="img/logo-bapanas.png">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+</head>
+
+<body>
+
+<!-- ===================== LOADING ====================== -->
+
+<div id="loading">
+
+<div class="spinner-border text-success"></div>
+
+<h5 class="mt-3">
+
+Memuat SIGAP Kaka...
+
+</h5>
+
+</div>
+
+<!-- ===================== HEADER ====================== -->
+
+<div class="header-flex">
+
+    <!-- Logo Kabupaten -->
+    <div class="header-logo">
+        <img
+<img
+src="img/logo-kabupaten.png"
+class="logo-header logo-kiri"
+alt="Logo Kabupaten Kupang">
+    </div>
+
+    <!-- Tengah -->
+    <div class="header-center">
+
+        <div class="logo-title">
+
+         <img
+src="img/logo-sigap.png"
+class="logo-app"
+alt="SIGAP KAKA">
+
+            <h1>SIGAP KAKA</h1>
+
+            <p>Sistem Informasi Harga Pangan Kabupaten Kupang</p>
+
+            <small>
+                DINAS PERTANIAN DAN KETAHANAN PANGAN
+            </small><br>
+
+            <small>
+                PEMERINTAH KABUPATEN KUPANG
+            </small>
+
+        </div>
+
+    </div>
+
+    <!-- Logo Bapanas -->
+    <div class="header-logo">
+
+       <img
+src="img/logo-bapanas.png"
+class="logo-header logo-kanan"
+alt="Logo Bapanas">
+        
+    </div>
+
+</div>
+
+<!-- =====================
+     MOTTO
+====================== -->
+
+<div class="sigap-motto sigap-motto-full">
+
+    <span class="motto-line"></span>
+
+    <span class="motto-text">
+
+    PANTAU HARGA • JAGA PANGAN •<br>
+    MENUJU KABUPATEN KUPANG EMAS
+
+    </span>
+
+    <span class="motto-line"></span>
+
+</div>
+
+<!-- ===================== RUNNING TEXT ====================== -->
+
+<div class="running">
+
+    <div class="running-text">
+
+        📢 Selamat Datang di SIGAP KAKA • Sistem Informasi Harga Pangan Kabupaten Kupang • Harga diperbarui setiap hari oleh Petugas Dinas Pertanian dan Ketahanan Pangan Kabupaten Kupang • Informasi ini digunakan sebagai referensi masyarakat Kabupaten Kupang
+
+    </div>
+
+</div>
+
+<!-- ===========================
+     GALERI SIGAP KAKA
+=========================== -->
+
+<div class="galeri-slider">
+
+    <img
+        id="galeriFoto"
+        src=""
+        alt="Galeri SIGAP KAKA">
+
+    <div
+        class="galeri-judul"
+        id="galeriJudul">
+
+        Memuat galeri...
+
+    </div>
+
+</div>
+
+<!-- ===================== AREA SILUET ====================== -->
+
+<section class="hero-siluet">
+
+<!-- ===================== BLINK ====================== -->
+
+<div class="container mt-3">
+
+<div class="alert alert-danger text-center blink">
+
+UPDATE HARGA PANGAN DI PASAR OESAO HARI INI
+
+</div>
+
+</div>
+
+<!-- ===================== DASHBOARD ====================== -->
+
+<div class="container-fluid px-4">
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card bg-success">
+
+<div>
+
+<h2 id="jumlahKomoditi">0</h2>
+
+<p>Jumlah Komoditi Dipantau</p>
+
+</div>
+
+<div class="icon">
+
+<i class="bi bi-basket-fill"></i>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card bg-primary">
+
+   <div>
+    <h2 id="hargaTertinggi">Rp0</h2>
+    <p>Harga Naik</p>
+    <div id="listNaik" class="dashboard-list"></div>
+
+</div>
+
+    <div class="icon">
+        <i class="bi bi-graph-up-arrow"></i>
+    </div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card bg-warning">
+
+   <div>
+    <h2 id="hargaTerendah">Rp0</h2>
+    <p>Harga Turun</p>
+    <div id="listTurun" class="dashboard-list"></div>
+
+    
+</div>
+
+    <div class="icon">
+       <i class="bi bi-graph-down-arrow"></i>
+    </div>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card bg-danger">
+
+    <div>
+        <h2 id="updateTerakhir">-</h2>
+        <p>Update Terakhir</p>
+    </div>
+
+    <div class="icon">
+        <i class="bi bi-calendar-event"></i>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================== SOP SIGAP KAKA ====================== -->
+
+<div class="container-fluid px-4 mt-4">
+
+<div class="card shadow border-0">
+
+<div class="card-header bg-success text-white">
+
+<h4 class="mb-0">
+<i class="bi bi-diagram-3-fill"></i>
+SOP SIGAP KAKA
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="row g-4">
+
+<div class="col-lg col-md-6">
+<div class="sop-card">
+<div class="sop-icon">
+<i class="bi bi-shop"></i>
+</div>  
+<div class="sop-no">1</div>
+<h5>Survei Harga</h5>
+<p>Petugas melakukan survei harga komoditas di pasar atau kios.</p>
+</div>
+</div>
+
+<div class="col-lg col-md-6">
+<div class="sop-card">
+<div class="sop-icon">
+<i class="bi bi-pencil-square"></i>
+</div>
+<div class="sop-no">2</div>
+<h5>Input Data</h5>
+<p>Harga, stok, foto dan lokasi GPS diinput ke aplikasi.</p>
+</div>
+</div>
+
+<div class="col-lg col-md-6">
+<div class="sop-card">
+<div class="sop-icon">
+<i class="bi bi-check2-circle"></i>
+</div>
+<div class="sop-no">3</div>
+<h5>Verifikasi</h5>
+<p>Admin memeriksa dan memvalidasi data hasil survei.</p>
+</div>
+</div>
+
+<div class="col-lg col-md-6">
+<div class="sop-card">
+<div class="sop-icon">
+<i class="bi bi-cloud-upload"></i>
+</div>
+<div class="sop-no">4</div>
+<h5>Publikasi</h5>
+<p>Data yang valid dipublikasikan ke website SIGAP KAKA.</p>
+</div>
+</div>
+
+<div class="col-lg col-md-6">
+<div class="sop-card">
+<div class="sop-icon">
+<i class="bi bi-people-fill"></i>
+</div>
+<div class="sop-no">5</div>
+<h5>Informasi</h5>
+<p>Masyarakat memperoleh informasi harga pangan yang cepat dan akurat.</p>
+</div>
+</div>
+
+<div class="col-lg col-md-6">
+<div class="sop-card">
+<div class="sop-icon">
+<i class="bi bi-clipboard2-data"></i>
+</div>
+<div class="sop-no">6</div>
+<h5>Evaluasi</h5>
+<p>Dinas melakukan evaluasi hasil pemantauan harga, tren komoditas,
+   serta kualitas data sebagai dasar pengambilan kebijakan.</p>
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<p class="text-center text-muted mb-0">
+
+<i class="bi bi-info-circle-fill text-success"></i>
+
+Seluruh data harga merupakan hasil survei lapangan yang telah diverifikasi oleh Dinas Pertanian dan Ketahanan Pangan Kabupaten Kupang.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== KOMODITAS DIPANTAU ====================== -->
+
+<div class="container-fluid px-4 mt-3">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+<h5 class="mb-0">
+
+<i class="bi bi-basket2-fill"></i>
+
+Komoditas Pangan yang Dipantau
+
+</h5>
+
+</div>
+
+<div class="komoditas-slider">
+
+<div class="komoditas-track" id="komoditasTrack">
+
+<!-- DATA KOMODITAS AKAN MUNCUL OTOMATIS -->
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== GRAFIK ====================== -->
+
+<div class="container-fluid px-4 mt-2">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+<h4>
+
+<i class="bi bi-bar-chart-fill"></i>
+
+Grafik Tren Harga Pangan
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<canvas id="chartHarga"></canvas>
+
+</div>
+
+</div>
+
+</div>
+<!-- ===================== MENU AKSI ====================== -->
+
+<div class="container-fluid px-4 mt-4">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+<h5 class="mb-0">
+
+<i class="bi bi-funnel-fill"></i>
+
+Pencarian Data Harga
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="row g-3">
+
+<div class="col-lg-4">
+
+<label class="form-label">
+
+Komoditas
+
+</label>
+
+<select class="form-select" id="filterKomoditi">
+
+<option value="">Semua Komoditas</option>
+
+</select>
+
+</div>
+
+<div class="col-lg-3">
+
+<label class="form-label">
+
+Tanggal
+
+</label>
+
+<input
+
+type="date"
+
+class="form-control"
+
+id="filterTanggal">
+
+</div>
+
+<div class="col-lg-5">
+
+<div class="info-status">
+
+<h6>
+<i class="bi bi-info-circle-fill"></i>
+ Pedoman Membaca Data
+</h6>
+
+<p>
+<b>🔺 Naik</b><br>
+Harga lebih tinggi dibandingkan pembaruan sebelumnya.
+</p>
+
+<p>
+<b>🔻 Turun</b><br>
+Harga lebih rendah dibandingkan pembaruan sebelumnya.
+</p>
+
+<p>
+<b>➖ Stabil</b><br>
+Harga tidak berubah dibandingkan pembaruan sebelumnya.
+</p>
+
+<p>
+<b>🟢 Banyak</b><br>
+Komoditas tersedia melimpah di sebagian besar pedagang.
+</p>
+
+<p>
+<b>🟡 Cukup</b><br>
+Komoditas tersedia dalam jumlah mencukupi.
+</p>
+
+<p>
+<b>🔴 Kurang</b><br>
+Komoditas tersedia terbatas sehingga masyarakat mungkin perlu mencari ke beberapa pedagang.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="header-action">
+
+    <button
+        class="btn btn-success"
+        onclick="loadData()">
+
+        <i class="bi bi-arrow-clockwise"></i>
+
+        Refresh
+
+    </button>
+
+<a
+    class="btn btn-primary"
+    href="https://script.google.com/macros/s/AKfycby4Nj4f_VqvNUXb64WcOfIoowbzS_mEXdo6jJqaZLcFjzw4erkFkGmrAFMrgGxn9diy/exec?page=login">
+
+    <i class="bi bi-person-lock"></i>
+
+    Login Petugas
+
+</a>
+
+    <button
+        class="btn btn-warning"
+        id="btnExport"
+        style="display:none"
+        onclick="exportExcel()">
+
+        <i class="bi bi-file-earmark-excel"></i>
+
+        Export
+
+    </button>
+
+</div>
+
+<button
+class="btn btn-info"
+id="btnHistori"
+style="display:none"
+onclick="simpanHistoriHariIni()">
+
+<i class="bi bi-database-fill"></i>
+
+Simpan Histori Hari Ini
+
+</button>
+
+</div>
+
+<!-- ===================== TABEL ====================== -->
+
+<div class="container mt-3">
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+<h5>
+
+<i class="bi bi-table"></i>
+
+Data Harga Pangan Kabupaten Kupang
+
+</h5>
+
+</div>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover table-striped align-middle">
+
+<thead class="table-success">
+
+<tr>
+
+<th width="60">No</th>
+
+<th>Komoditas</th>
+
+<th width="140">Harga</th>
+
+<th width="120">Satuan</th>
+
+<th width="140">Tanggal</th>
+
+<th width="140">Ketersediaan</th>
+
+<th width="120">Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tbodyHarga">
+
+<tr>
+
+<td colspan="7" class="text-center">
+
+Memuat data...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== INFORMASI ====================== -->
+
+<div class="container mt-4">
+
+<div class="row">
+
+<div class="col-lg-4">
+
+<div class="card shadow-sm border-success">
+
+<div class="card-body text-center">
+
+<h2 class="text-success">
+
+<i class="bi bi-check-circle-fill"></i>
+
+</h2>
+
+<h5>
+
+Data Valid
+
+</h5>
+
+<p>
+
+Data harga berasal dari petugas resmi Dinas Pertanian dan Ketahanan Pangan Kabupaten Kupang.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow-sm border-primary">
+
+<div class="card-body text-center">
+
+<h2 class="text-primary">
+
+<i class="bi bi-clock-history"></i>
+
+</h2>
+
+<h5>
+
+Update Harian
+
+</h5>
+
+<p>
+
+Harga diperbarui setiap hari sesuai hasil pemantauan lapangan.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow-sm border-warning">
+
+<div class="card-body text-center">
+
+<h2 class="text-warning">
+
+<i class="bi bi-people-fill"></i>
+
+</h2>
+
+<h5>
+
+Akses Publik
+
+</h5>
+
+<p>
+
+Masyarakat dapat melihat informasi harga secara bebas tanpa login.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =====================================
+      TENTANG SIGAP KAKA
+====================================== -->
+
+<section class="about-section">
+
+<div class="container">
+
+<div class="about-header">
+
+    <h2>
+
+        <i class="bi bi-info-circle-fill"></i>
+
+        Tentang SIGAP KAKA
+
+    </h2>
+
+    <div class="about-line"></div>
+
+    <p>
+
+        Mengenal Sistem Informasi Harga Pangan Kabupaten Kupang
+
+    </p>
+
+</div>
+
+<div class="about-card">
+
+<div class="row align-items-center">
+
+<div class="col-lg-3 text-center">
+
+<img
+src="img/logo-sigap.png"
+class="about-logo"
+alt="Logo SIGAP KAKA">
+</div>
+
+<div class="col-lg-9">
+
+<h3>
+
+SIGAP KAKA
+
+</h3>
+
+<p>
+
+<strong>SIGAP KAKA (Sistem Informasi Harga Pangan Kabupaten Kupang)</strong>
+
+merupakan aplikasi berbasis web yang dikembangkan oleh
+
+<strong>Dinas Pertanian dan Ketahanan Pangan Kabupaten Kupang</strong>
+
+untuk menyediakan informasi harga pangan yang cepat,
+
+akurat,
+
+transparan,
+
+dan mudah diakses oleh masyarakat.
+
+</p>
+
+<p>
+
+Aplikasi ini dibangun sebagai media publikasi informasi harga pangan,
+
+mendukung pengendalian inflasi daerah,
+
+serta memberikan referensi harga kepada masyarakat Kabupaten Kupang.
+
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="about-item">
+
+<div class="about-icon">
+
+🎯
+
+</div>
+
+<h5>Tujuan</h5>
+
+<p>
+
+Menyediakan informasi harga pangan yang cepat,
+
+akurat,
+
+transparan,
+
+dan mudah diakses masyarakat.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="about-item">
+
+<div class="about-icon">
+
+📊
+
+</div>
+
+<h5>Fitur</h5>
+
+<p>
+
+Dashboard,
+
+grafik tren,
+
+filter komoditas,
+
+pencarian,
+
+dan informasi ketersediaan pangan.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="about-item">
+
+<div class="about-icon">
+
+🏛
+
+</div>
+
+<h5>Instansi</h5>
+
+<p>
+
+Dinas Pertanian dan Ketahanan Pangan
+
+Kabupaten Kupang.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+
+<span class="badge bg-success px-4 py-2">
+
+Versi 2.1
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+    
+<section class="map-section">
+
+<h2>📍 Lokasi Dinas Pertanian dan Ketahanan Pangan Serta Pasar Oesao Kabupaten Kupang</h2>
+
+<div id="mapKupang"></div>
+
+</section>
+
+<!-- ===================== FOOTER ====================== -->
+
+<footer class="footer mt-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- =====================
+                 FOOTER KIRI
+            ====================== -->
+
+            <div class="col-md-6">
+
+                <div class="footer-brand">
+
+                    <div class="footer-logo-box">
+
+                        <img
+src="img/logo-sigap.png"
+class="footer-logo-sigap"
+alt="Logo SIGAP KAKA">
+
+                    </div>
+
+
+                    <div class="footer-brand-text">
+
+                        <h5>
+                            SIGAP KAKA
+                        </h5>
+
+                        <p>
+                            Sistem Informasi Harga Pangan Kabupaten Kupang
+                        </p>
+
+                        <span>
+                            Dinas Pertanian dan Ketahanan Pangan
+                        </span>
+
+                        <span>
+                            Pemerintah Kabupaten Kupang
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 FOOTER KANAN
+            ====================== -->
+
+            <div class="col-md-6 text-md-end">
+
+                <div class="footer-info">
+
+                    <p>
+                        © 2026 SIGAP KAKA
+                    </p>
+
+                    <p>
+                        Dibangun sebagai Gagasan Kreatif Aktualisasi Latsar CPNS 2026
+                    </p>
+
+                    <p>
+                        Versi 2.1 (Y.T.W)
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ===================== BACK TO TOP ====================== -->
+
+<button
+    id="btnTop"
+    class="btn btn-success">
+
+    <i class="bi bi-arrow-up"></i>
+
+</button>
+
+<!-- ===================== TOAST ====================== -->
+
+<div
+    class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div
+        id="toastInfo"
+        class="toast">
+
+        <div class="toast-header">
+
+            <strong class="me-auto">
+
+                SIGAP KAKA
+
+            </strong>
+
+            <button
+                class="btn-close"
+                data-bs-dismiss="toast">
+
+            </button>
+
+        </div>
+
+        <div
+            class="toast-body"
+            id="toastBody">
+
+            Berhasil
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
