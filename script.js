@@ -762,6 +762,7 @@ switch(item.ketersediaan){
 
         track.innerHTML = html + html;
 
+console.log("KARTU SLIDER:", document.querySelectorAll(".komoditas-item").length);
     } catch(err){
 
         console.error(err);
