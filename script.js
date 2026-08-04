@@ -42,8 +42,8 @@ async function loadInitialData() {
 
         const response = await fetch(API + "?action=getInitialData");
         const data = await response.json();
+        console.log("DATA AWAL:", data);
         console.log("JUMLAH HARGA:", data.harga.length);
-        console.log(data.harga);
 
         // Dashboard
         document.getElementById("jumlahKomoditi").innerHTML =
