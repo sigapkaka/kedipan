@@ -837,8 +837,8 @@ SLIDER KOMODITAS PANGAN
 
 .komoditas-item{
 
-    width:150px;
-    min-width:150px;
+    width:100px;
+    min-width:100px;
 
     text-align:center;
 
@@ -3757,6 +3757,24 @@ SLIDER KOMODITAS PANGAN
     .komoditas-track{
         gap:8px !important;
         padding:0 8px !important;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .komoditas-item{
+
+        width:100px;
+        min-width:100px;
+
+    }
+
+    .komoditas-track{
+
+        gap:10px;
+        padding:0 10px;
+
     }
 
 }
