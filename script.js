@@ -42,8 +42,6 @@ async function loadInitialData() {
 
         const response = await fetch(API + "?action=getInitialData");
         const data = await response.json();
-        console.log("DATA AWAL:", data);
-        console.log("JUMLAH HARGA:", data.harga.length);
 
         // Dashboard
         document.getElementById("jumlahKomoditi").innerHTML =
@@ -762,8 +760,7 @@ switch(item.ketersediaan){
 
         track.innerHTML = html + html;
 
-console.log("KARTU SLIDER:", document.querySelectorAll(".komoditas-item").length);
-    } catch(err){
+        catch(err){
 
         console.error(err);
 
