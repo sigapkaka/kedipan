@@ -3733,3 +3733,31 @@ SLIDER KOMODITAS PANGAN
     }
 
 }
+
+@media (max-width:768px){
+
+    .komoditas-item{
+        width:90px !important;
+        min-width:90px !important;
+    }
+
+    .komoditas-foto{
+        width:68px !important;
+        height:68px !important;
+    }
+
+    .emoji-komoditas{
+        font-size:38px !important;
+    }
+
+    .komoditas-nama{
+        font-size:11px !important;
+        line-height:1.2 !important;
+    }
+
+    .komoditas-track{
+        gap:8px !important;
+        padding:0 8px !important;
+    }
+
+}
