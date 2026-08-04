@@ -129,28 +129,6 @@ HEADER
     position:relative;
 }
 
-@keyframes headerGradient{
-
-    0%{
-
-        background-position:left center;
-
-    }
-
-    50%{
-
-        background-position:right center;
-
-    }
-
-    100%{
-
-        background-position:left center;
-
-    }
-
-}
-
 .header h5{
     font-size:22px;
     font-weight:500;
@@ -949,37 +927,6 @@ EMOJI KOMODITAS
         drop-shadow(
             0 5px 5px rgba(0,0,0,.14)
         );
-}
-
-
-/* ANIMASI MELAYANG HALUS */
-
-@keyframes komoditasFloat{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-    50%{
-
-    transform:
-        translateY(-8px)
-        rotate(4deg);
-
-}
-
-    100%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
 }
 
 /* EFEK CAHAYA */
