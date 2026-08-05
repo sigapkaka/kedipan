@@ -3814,3 +3814,20 @@ SLIDER KOMODITAS PANGAN
     border-radius:10px;
 
 }
+ /* CARD LIST NAIK TURUN */
+
+.dashboard-card:has(.dashboard-list){
+
+    min-height:200px;
+    height:auto;
+    overflow:visible;
+
+}
+
+.dashboard-list{
+
+    max-height:90px;
+    overflow-y:auto;
+    padding-right:5px;
+
+}
