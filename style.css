@@ -2954,7 +2954,8 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 
 .logo-title p{
     font-size:28px;
-    margin:10px 0;
+    margin:8px 0;
+    line-height:1.25;
 }
 
 .logo-title small{
