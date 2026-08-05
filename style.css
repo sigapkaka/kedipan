@@ -3731,25 +3731,6 @@ SLIDER KOMODITAS PANGAN
 
 /* LIST KOMODITAS NAIK TURUN */
 
-.dashboard-list{
-
-    margin-top:8px;
-
-    font-size:13px;
-
-    line-height:1.5;
-
-    color:white;
-
-    max-height:70px;
-
-    overflow-y:auto;
-
-    padding-right:5px;
-
-}
-
-
 /* scrollbar kecil */
 
 .dashboard-list::-webkit-scrollbar{
