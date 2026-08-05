@@ -3008,7 +3008,9 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
 .logo-title small{
-    font-size:13px;
+    font-size:12px !important;
+    line-height:1.2 !important;
+    margin:1px 0 !important;
 }
 
 .sigap-motto-full .motto-text{
