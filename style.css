@@ -2960,7 +2960,11 @@ box-shadow:0 10px 25px rgba(0,0,0,.15);
 .logo-title small{
     display:block;
     font-size:18px;
-    line-height:1.6;
+    line-height:1.1;
+    margin:2px 0;
+    color:#f8f4d8;
+    font-weight:600;
+    letter-spacing:.5px;
 }
 
 .sigap-motto-full{
