@@ -50,17 +50,10 @@ async function loadInitialData() {
        document.getElementById("hargaTertinggi").innerHTML =
     (data.dashboard.naik || 0) + " Komoditas";
 
-let naik = data.dashboard.daftarNaik.slice(0,3);
-
-if(data.dashboard.daftarNaik.length > 3){
-
-    naik.push('<span class="dashboard-more">+' +
-(data.dashboard.daftarNaik.length - 3) +
-' lainnya</span>');
-
-}
-
+let naik = data.dashboard.daftarNaik;
+        
 document.getElementById("listNaik").innerHTML =
+
     naik
         .filter(item => item && item.trim() !== "")
         .map(item => "• " + item)
@@ -69,15 +62,7 @@ document.getElementById("listNaik").innerHTML =
 document.getElementById("hargaTerendah").innerHTML =
     (data.dashboard.turun || 0) + " Komoditas";
 
-let turun = data.dashboard.daftarTurun.slice(0,3);
-
-if(data.dashboard.daftarTurun.length > 3){
-
-    turun.push('<span class="dashboard-more">+' +
-(data.dashboard.daftarTurun.length - 3) +
-' lainnya</span>');
-
-}
+let turun = data.dashboard.daftarTurun;
 
 document.getElementById("listTurun").innerHTML =
     turun
