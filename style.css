@@ -672,55 +672,6 @@ background:#146c43;
 }
 
 /*==================================================
-ANIMATION
-==================================================*/
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-.dashboard-card{
-
-animation:slideUp .8s ease;
-
-}
-
-@keyframes slideUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-/*==================================================
 WARNA DASHBOARD SIGAP KAKA
 NATURAL AGRICULTURE PALETTE
 ==================================================*/
