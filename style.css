@@ -1939,8 +1939,8 @@ FRAME TEPI BODY - HP
 
     letter-spacing:-1px !important;
 
-    white-space:nowrap !important;
-
+    white-space:normal !important;
+        
     overflow:visible !important;
 
     text-shadow:0 2px 5px rgba(0,0,0,.15);
