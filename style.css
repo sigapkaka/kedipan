@@ -2301,9 +2301,9 @@ FRAME TEPI BODY - HP
 
         width:100% !important;
 
-       height:160px !important;
+       height:auto !important;
        min-height:160px !important;
-       max-height:160px !important;
+       max-height:none !important;
 
         margin:0 !important;
 
@@ -2323,7 +2323,7 @@ FRAME TEPI BODY - HP
 
         border-radius:16px !important;
 
-        overflow:hidden !important;
+        overflow:visible !important;
 
     }
 
