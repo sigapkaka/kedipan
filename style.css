@@ -255,9 +255,7 @@ opacity:.25;
         1px solid
         rgba(255,255,255,.18);
 
-    box-shadow:
-        0 10px 25px rgba(34,60,43,.13),
-        0 2px 5px rgba(34,60,43,.08);
+    box-shadow:0 8px 18px rgba(34,60,43,.15);
 
     transition:
         transform .3s ease,
@@ -275,14 +273,12 @@ opacity:.25;
 
 .dashboard-card:hover{
 
-    transform:
-        translateY(-6px);
+    transform:translateY(-6px);
 
-    box-shadow:
-        0 18px 38px rgba(34,60,43,.20),
-        0 4px 8px rgba(34,60,43,.08);
+    box-shadow:0 14px 28px rgba(34,60,43,.20);
 
 }
+
 .dashboard-card:hover::before{
 
 left:-90px;
@@ -394,10 +390,7 @@ left:-90px;
     font-size:30px;
 
     color:white;
-
-    backdrop-filter:
-        blur(6px);
-
+    
     box-shadow:
         inset 0 1px 0
         rgba(255,255,255,.15);
@@ -1065,7 +1058,7 @@ body{
             #edf4e8 100%
         ) !important;
 
-    background-attachment:fixed;
+    background-attachment:scroll;
 
 }
 
