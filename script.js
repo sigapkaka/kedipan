@@ -36,16 +36,12 @@ window.onload = async function () {
     }
 
 }
-async function loadInitialData() {
-
-    try {
         async function loadInitialData() {
 
-    try {
+        try {
 
         grafikCache = {};
 
-        const response = await fetch(API + "?action=getInitialData");
         const response = await fetch(API + "?action=getInitialData");
         const data = await response.json();
 
