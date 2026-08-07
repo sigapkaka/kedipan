@@ -10,7 +10,7 @@ let dataTampil = [];
 let grafikCache = {};
 let chart = null;
 
-const API = "ttps://script.google.com/macros/s/AKfycby26LTxHkQdaDvKogkLF2xz-JAQa1zIQsA-fXFw98MeqghcHROrE-5aq8Qucm1ksV53/exec";
+const API = "https://script.google.com/macros/s/AKfycby26LTxHkQdaDvKogkLF2xz-JAQa1zIQsA-fXFw98MeqghcHROrE-5aq8Qucm1ksV53/exec";
 
 /*==============================
 LOAD APLIKASI
