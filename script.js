@@ -39,7 +39,13 @@ window.onload = async function () {
 async function loadInitialData() {
 
     try {
+        async function loadInitialData() {
 
+    try {
+
+        grafikCache = {};
+
+        const response = await fetch(API + "?action=getInitialData");
         const response = await fetch(API + "?action=getInitialData");
         const data = await response.json();
 
@@ -129,13 +135,7 @@ async function loadData() {
 
         const response = await fetch(API + "?action=getInitialData");
 
-        console.log("Status:", response.status);
-
         const hasil = await response.json();
-        alert("Jumlah data: " + hasil.length);
-
-        console.log(hasil);
-        console.log("JUMLAH:", hasil.length);
 
         dataHarga = hasil;
         dataTampil = hasil;
@@ -249,37 +249,6 @@ ${status}
     });
 
     document.getElementById("tbodyHarga").innerHTML = html;
-
-}
-
-/*==============================
-LOAD KOMODITI
-==============================*/
-
-    async function loadKomoditi() {
-
-    try {
-
-        const response = await fetch(API + "?action=getKomoditi");
-        const list = await response.json();
-
-        dataKomoditi = list;
-
-        let html = '<option value="">Semua Komoditas</option>';
-
-        list.forEach(function(k) {
-
-            html += `<option value="${k}">${k}</option>`;
-
-        });
-
-        document.getElementById("filterKomoditi").innerHTML = html;
-
-    } catch (err) {
-
-        console.error("Load Komoditi gagal:", err);
-
-    }
 
 }
 
@@ -761,28 +730,6 @@ switch(item.ketersediaan){
 let dataGaleri = [];
 let indexGaleri = 0;
 
-async function loadGaleri() {
-
-    try {
-
-        const response = await fetch(API + "?action=getGaleri");
-        dataGaleri = await response.json();
-
-        if (dataGaleri.length > 0) {
-
-            tampilGaleri();
-
-            setInterval(nextGaleri, 10000);
-
-        }
-
-    } catch(err){
-
-        console.error(err);
-
-    }
-
-}
 function tampilGaleri(){
 
     if(dataGaleri.length === 0) return;
@@ -896,6 +843,7 @@ GRAFIK TREN HARGA PREMIUM
 
 function buatGrafik(data){
 
+    if(!data || data.length === 0) return;
     const label = [];
     const nilai = [];
 
@@ -968,7 +916,7 @@ function buatGrafik(data){
             },
 
             animation:{
-                duration:1800,
+                duration:700,
                 easing:"easeOutQuart"
             },
 
