@@ -633,18 +633,15 @@ Pencarian Data Harga
 
                     </a>
 
+<button
+    class="btn btn-secondary"
+    data-bs-toggle="modal"
+    data-bs-target="#modalPanduan">
 
-                    <button
-                        class="btn btn-warning"
-                        id="btnExport"
-                        style="display:none"
-                        onclick="exportExcel()">
+    <i class="bi bi-book"></i>
+    Panduan
 
-                        <i class="bi bi-file-earmark-excel"></i>
-                        Export
-
-                    </button>
-
+</button>
 
                     <button
                         class="btn btn-info"
@@ -1243,6 +1240,92 @@ alt="Logo SIGAP KAKA">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="script.js"></script>
+
+<!-- MODAL PANDUAN SIGAP KAKA -->
+<div
+    class="modal fade"
+    id="modalPanduan"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header bg-success text-white">
+
+                <h5 class="modal-title">
+                    <i class="bi bi-book"></i>
+                    Panduan SIGAP KAKA
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Tutup">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <h6 class="fw-bold text-success">
+                    Cara Menggunakan SIGAP KAKA
+                </h6>
+
+                <ol>
+                    <li class="mb-2">
+                        Pilih <b>Komoditas</b> untuk melihat harga
+                        komoditas tertentu.
+                    </li>
+
+                    <li class="mb-2">
+                        Pilih <b>Tanggal</b> untuk melihat data
+                        harga pada tanggal yang diinginkan.
+                    </li>
+
+                    <li class="mb-2">
+                        Gunakan <b>Refresh</b> untuk memperbarui
+                        data harga.
+                    </li>
+
+                    <li class="mb-2">
+                        Perhatikan indikator <b>Naik, Turun,
+                        dan Stabil</b> pada harga.
+                    </li>
+
+                    <li class="mb-2">
+                        Perhatikan status <b>Ketersediaan</b>
+                        komoditas.
+                    </li>
+
+                    <li>
+                        Gunakan <b>Early Warning</b> untuk melihat
+                        komoditas yang memerlukan perhatian.
+                    </li>
+                </ol>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Tutup
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 
