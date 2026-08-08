@@ -3874,3 +3874,8 @@ SLIDER KOMODITAS PANGAN
     background: rgba(22,163,74,0.05);
 
 }
+
+.info-status p {
+    margin-bottom: 6px !important;
+    line-height: 1.2;
+}
