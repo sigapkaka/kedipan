@@ -77,7 +77,7 @@ document.getElementById("listTurun").innerHTML =
         // Data Harga
         dataHarga = data.harga;
         dataTampil = data.harga;
-
+        hitungEarlyWarning();
         tampilkanTabel(dataTampil);
 
         // Komoditi
@@ -997,5 +997,311 @@ function buatGrafik(data){
         }
 
     });
+
+}
+
+/*==================================================
+  EARLY WARNING HARGA PANGAN
+==================================================*/
+
+function hitungEarlyWarning() {
+
+    if (!dataHarga || dataHarga.length === 0) {
+        return;
+    }
+
+    let kritis = 0;
+    let waspada = 0;
+    let perhatian = 0;
+    let normal = 0;
+
+    let daftar = [];
+
+
+    dataHarga.forEach(function(item) {
+
+        const harga = Number(item.harga) || 0;
+
+        const hargaSebelumnya =
+            Number(item.hargaSebelumnya) || 0;
+
+
+        /*
+        ================================
+        HITUNG PERSENTASE PERUBAHAN
+        ================================
+        */
+
+        let perubahan = 0;
+
+        if (hargaSebelumnya > 0) {
+
+            perubahan =
+                ((harga - hargaSebelumnya)
+                / hargaSebelumnya) * 100;
+
+        }
+
+
+        /*
+        ================================
+        TENTUKAN STATUS
+        ================================
+        */
+
+        let status = "NORMAL";
+
+        let level = 0;
+
+
+        /*
+        KRITIS
+        Harga naik >= 10%
+        */
+
+        if (perubahan >= 10) {
+
+            status = "KRITIS";
+            level = 4;
+
+            kritis++;
+
+        }
+
+
+        /*
+        WASPADA
+        Harga naik 5% - 9.99%
+        */
+
+        else if (perubahan >= 5) {
+
+            status = "WASPADA";
+            level = 3;
+
+            waspada++;
+
+        }
+
+
+        /*
+        PERHATIAN
+        Ketersediaan kurang
+        */
+
+        else if (
+            String(item.ketersediaan)
+            .toLowerCase()
+            .trim() === "kurang"
+        ) {
+
+            status = "PERHATIAN";
+            level = 2;
+
+            perhatian++;
+
+        }
+
+
+        /*
+        NORMAL
+        */
+
+        else {
+
+            status = "NORMAL";
+            level = 1;
+
+            normal++;
+
+        }
+
+
+        /*
+        MASUKKAN DATA
+        */
+
+        daftar.push({
+
+            komoditi: item.komoditi,
+
+            harga: harga,
+
+            perubahan: perubahan,
+
+            ketersediaan: item.ketersediaan,
+
+            status: status,
+
+            level: level
+
+        });
+
+    });
+
+
+    /*
+    ================================
+    UPDATE JUMLAH
+    ================================
+    */
+
+    document.getElementById("ewKritis").innerText =
+        kritis;
+
+    document.getElementById("ewWaspada").innerText =
+        waspada;
+
+    document.getElementById("ewPerhatian").innerText =
+        perhatian;
+
+    document.getElementById("ewNormal").innerText =
+        normal;
+
+
+    /*
+    ================================
+    URUTKAN
+    KRITIS → WASPADA → PERHATIAN → NORMAL
+    ================================
+    */
+
+    daftar.sort(function(a, b) {
+
+        return b.level - a.level;
+
+    });
+
+
+    /*
+    ================================
+    TAMPILKAN TABEL
+    ================================
+    */
+
+    let html = "";
+
+    daftar.forEach(function(item, index) {
+
+
+        let badgeStatus = "";
+
+
+        if (item.status === "KRITIS") {
+
+            badgeStatus =
+                `<span class="badge bg-danger">
+                    🔴 KRITIS
+                </span>`;
+
+        }
+
+        else if (item.status === "WASPADA") {
+
+            badgeStatus =
+                `<span class="badge bg-warning text-dark">
+                    🟠 WASPADA
+                </span>`;
+
+        }
+
+        else if (item.status === "PERHATIAN") {
+
+            badgeStatus =
+                `<span class="badge bg-warning text-dark">
+                    🟡 PERHATIAN
+                </span>`;
+
+        }
+
+        else {
+
+            badgeStatus =
+                `<span class="badge bg-success">
+                    🟢 NORMAL
+                </span>`;
+
+        }
+
+
+        let perubahanText = "";
+
+        if (item.perubahan > 0) {
+
+            perubahanText =
+                `<span class="text-danger fw-bold">
+                    ▲ ${item.perubahan.toFixed(1)}%
+                </span>`;
+
+        }
+
+        else if (item.perubahan < 0) {
+
+            perubahanText =
+                `<span class="text-success fw-bold">
+                    ▼ ${Math.abs(item.perubahan).toFixed(1)}%
+                </span>`;
+
+        }
+
+        else {
+
+            perubahanText =
+                `<span class="text-secondary">
+                    ➖ 0%
+                </span>`;
+
+        }
+
+
+        html += `
+
+            <tr>
+
+                <td class="text-center">
+                    ${index + 1}
+                </td>
+
+                <td>
+                    ${getEmojiKomoditas(item.komoditi)}
+                    <strong>
+                        ${item.komoditi}
+                    </strong>
+                </td>
+
+                <td class="text-end">
+
+                    Rp ${item.harga.toLocaleString("id-ID")}
+
+                </td>
+
+                <td class="text-center">
+
+                    ${perubahanText}
+
+                </td>
+
+                <td class="text-center">
+
+                    ${item.ketersediaan || "-"}
+
+                </td>
+
+                <td class="text-center">
+
+                    ${badgeStatus}
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "tbodyEarlyWarning"
+    ).innerHTML = html;
 
 }
