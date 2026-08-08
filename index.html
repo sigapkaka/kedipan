@@ -258,6 +258,127 @@ UPDATE HARGA PANGAN DI PASAR OESAO HARI INI
 
 </section>
 
+<!-- ===================== EARLY WARNING ====================== -->
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-danger text-white">
+
+            <h4 class="mb-0">
+                <i class="bi bi-shield-exclamation"></i>
+                Early Warning Harga Pangan
+            </h4>
+
+            <small>
+                Sistem peringatan dini berdasarkan perubahan harga
+                dan ketersediaan komoditas
+            </small>
+
+        </div>
+
+        <div class="card-body">
+
+            <!-- RINGKASAN -->
+            <div class="row g-3 mb-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="ew-card ew-kritis">
+                        <div>
+                            <h2 id="ewKritis">0</h2>
+                            <p>Komoditas Kritis</p>
+                        </div>
+                        <i class="bi bi-exclamation-octagon-fill"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="ew-card ew-waspada">
+                        <div>
+                            <h2 id="ewWaspada">0</h2>
+                            <p>Komoditas Waspada</p>
+                        </div>
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="ew-card ew-perhatian">
+                        <div>
+                            <h2 id="ewPerhatian">0</h2>
+                            <p>Perlu Perhatian</p>
+                        </div>
+                        <i class="bi bi-eye-fill"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="ew-card ew-normal">
+                        <div>
+                            <h2 id="ewNormal">0</h2>
+                            <p>Kondisi Normal</p>
+                        </div>
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TABEL EARLY WARNING -->
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover align-middle">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th width="50">No</th>
+
+                            <th>Komoditas</th>
+
+                            <th>Harga</th>
+
+                            <th>Perubahan</th>
+
+                            <th>Ketersediaan</th>
+
+                            <th>Status Early Warning</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tbodyEarlyWarning">
+
+                        <tr>
+
+                            <td colspan="6"
+                                class="text-center text-muted">
+
+                                Belum ada peringatan
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== END EARLY WARNING ====================== -->
+
 <!-- ===================== SOP SIGAP KAKA ====================== -->
 
 <div class="container-fluid px-4 mt-4">
