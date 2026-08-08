@@ -3763,3 +3763,114 @@ SLIDER KOMODITAS PANGAN
     padding-right:5px;
 
 }
+
+/*==================================================
+  EARLY WARNING
+==================================================*/
+
+.ew-card {
+
+    min-height: 125px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+.ew-card h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+
+.ew-card p {
+
+    margin: 5px 0 0;
+
+    font-size: 14px;
+
+}
+
+
+.ew-card > i {
+
+    font-size: 42px;
+
+    opacity: 0.85;
+
+}
+
+
+.ew-kritis {
+
+    background: linear-gradient(
+        135deg,
+        #dc2626,
+        #991b1b
+    );
+
+}
+
+
+.ew-waspada {
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #d97706
+    );
+
+}
+
+
+.ew-perhatian {
+
+    background: linear-gradient(
+        135deg,
+        #eab308,
+        #ca8a04
+    );
+
+}
+
+
+.ew-normal {
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #15803d
+    );
+
+}
+
+
+#tbodyEarlyWarning td {
+
+    vertical-align: middle;
+
+}
+
+
+#tbodyEarlyWarning tr:hover {
+
+    background: rgba(22,163,74,0.05);
+
+}
