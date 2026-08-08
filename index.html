@@ -562,139 +562,191 @@ Pencarian Data Harga
 
 <div class="card-body">
 
-<div class="row g-3">
+    <div class="row g-3 align-items-stretch">
 
-<div class="col-lg-4">
+        <!-- =========================
+             BAGIAN KIRI
+        ========================== -->
+        <div class="col-lg-7">
 
-<label class="form-label">
+            <div class="h-100 d-flex flex-column">
 
-Komoditas
+                <!-- BARIS 1 -->
+                <div class="row g-2">
 
-</label>
+                    <!-- KOMODITAS -->
+                    <div class="col-md-7">
 
-<select class="form-select" id="filterKomoditi">
+                        <label class="form-label">
+                            Komoditas
+                        </label>
 
-<option value="">Semua Komoditas</option>
+                        <select
+                            class="form-select"
+                            id="filterKomoditi">
 
-</select>
+                            <option value="">
+                                Semua Komoditas
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- TANGGAL -->
+                    <div class="col-md-5">
+
+                        <label class="form-label">
+                            Tanggal
+                        </label>
+
+                        <input
+                            type="date"
+                            class="form-control"
+                            id="filterTanggal">
+
+                    </div>
+
+                </div>
+
+
+                <!-- BARIS 2 -->
+                <div class="d-flex align-items-center gap-2 flex-wrap mt-3">
+
+                    <button
+                        class="btn btn-success"
+                        onclick="refreshData()">
+
+                        <i class="bi bi-arrow-clockwise"></i>
+                        Refresh
+
+                    </button>
+
+
+                    <a
+                        class="btn btn-primary"
+                        href="https://script.google.com/macros/s/AKfycby26LTxHkQdaDvKogkLF2xz-JAQa1zIQsA-fXFw98MeqghcHROrE-5aq8Qucm1ksV53/exec?page=login">
+
+                        <i class="bi bi-person-lock"></i>
+                        Login Petugas
+
+                    </a>
+
+
+                    <button
+                        class="btn btn-warning"
+                        id="btnExport"
+                        style="display:none"
+                        onclick="exportExcel()">
+
+                        <i class="bi bi-file-earmark-excel"></i>
+                        Export
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-info"
+                        id="btnHistori"
+                        style="display:none"
+                        onclick="simpanHistoriHariIni()">
+
+                        <i class="bi bi-database-fill"></i>
+                        Simpan Histori Hari Ini
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             BAGIAN KANAN
+        ========================== -->
+        <div class="col-lg-5">
+
+            <div
+                class="info-status h-100 border rounded-3 p-3">
+
+                <h6 class="mb-2">
+
+                    <i class="bi bi-info-circle-fill"></i>
+                    Pedoman Membaca Data
+
+                </h6>
+
+
+                <!-- BARIS 1 -->
+                <div class="d-flex flex-wrap gap-3 mb-2">
+
+                    <div>
+                        <b>🔺 Naik</b>
+                        <small class="d-block">
+                            Harga meningkat.
+                        </small>
+                    </div>
+
+                    <div>
+                        <b>🔻 Turun</b>
+                        <small class="d-block">
+                            Harga menurun.
+                        </small>
+                    </div>
+
+                    <div>
+                        <b>➖ Stabil</b>
+                        <small class="d-block">
+                            Harga tetap.
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <!-- BARIS 2 -->
+                <div class="d-flex flex-wrap gap-3">
+
+                    <div>
+                        <b>🟢 Banyak</b>
+                        <small class="d-block">
+                            Stok mencukupi.
+                        </small>
+                    </div>
+
+                    <div>
+                        <b>🟡 Cukup</b>
+                        <small class="d-block">
+                            Stok sedang.
+                        </small>
+                    </div>
+
+                    <div>
+                        <b>🔴 Kurang</b>
+                        <small class="d-block">
+                            Stok terbatas.
+                        </small>
+                    </div>
+
+                    <div>
+                        <b>🟠 Langka</b>
+                        <small class="d-block">
+                            Stok sangat sedikit.
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
-
-<div class="col-lg-3">
-
-<label class="form-label">
-
-Tanggal
-
-</label>
-
-<input
-
-type="date"
-
-class="form-control"
-
-id="filterTanggal">
-
-</div>
-
-<div class="col-lg-5">
-
-<div class="info-status">
-
-<h6>
-<i class="bi bi-info-circle-fill"></i>
- Pedoman Membaca Data
-</h6>
-
-<p>
-<b>🔺 Naik</b><br>
-Harga lebih tinggi dibandingkan pembaruan sebelumnya.
-</p>
-
-<p>
-<b>🔻 Turun</b><br>
-Harga lebih rendah dibandingkan pembaruan sebelumnya.
-</p>
-
-<p>
-<b>➖ Stabil</b><br>
-Harga tidak berubah dibandingkan pembaruan sebelumnya.
-</p>
-
-<p>
-<b>🟢 Banyak</b><br>
-Komoditas tersedia melimpah di sebagian besar pedagang.
-</p>
-
-<p>
-<b>🟡 Cukup</b><br>
-Komoditas tersedia dalam jumlah mencukupi.
-</p>
-
-<p>
-<b>🔴 Kurang</b><br>
-Komoditas tersedia terbatas sehingga masyarakat mungkin perlu mencari ke beberapa pedagang.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="header-action">
-
-   <button
-    class="btn btn-success"
-    onclick="refreshData()">
-
-    <i class="bi bi-arrow-clockwise"></i>
-
-    Refresh
-
-</button>
-
-<a
-    class="btn btn-primary"
-    href="https://script.google.com/macros/s/AKfycby26LTxHkQdaDvKogkLF2xz-JAQa1zIQsA-fXFw98MeqghcHROrE-5aq8Qucm1ksV53/exec?page=login">
-
-    <i class="bi bi-person-lock"></i>
-
-    Login Petugas
-
-</a>
-
-    <button
-        class="btn btn-warning"
-        id="btnExport"
-        style="display:none"
-        onclick="exportExcel()">
-
-        <i class="bi bi-file-earmark-excel"></i>
-
-        Export
-
-    </button>
-
-</div>
-
-<button
-class="btn btn-info"
-id="btnHistori"
-style="display:none"
-onclick="simpanHistoriHariIni()">
-
-<i class="bi bi-database-fill"></i>
-
-Simpan Histori Hari Ini
-
-</button>
-
-</div>
-
 <!-- ===================== TABEL ====================== -->
 
 <div class="container mt-3">
