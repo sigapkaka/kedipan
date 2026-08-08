@@ -3872,3 +3872,7 @@ SLIDER KOMODITAS PANGAN
     margin-bottom: 6px !important;
     line-height: 1.2;
 }
+/* TURUNKAN KELOMPOK TOMBOL KIRI */
+.filter-actions{
+    margin-top: 40px !important;
+}
