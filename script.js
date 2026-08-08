@@ -1010,13 +1010,27 @@ function hitungEarlyWarning() {
         return;
     }
 
+    let kritis = 0;
+    let waspada = 0;
+    let perhatian = 0;
+    let normal = 0;
+
     let daftar = [];
+
 
     dataHarga.forEach(function(item) {
 
         const harga = Number(item.harga) || 0;
+
         const hargaSebelumnya =
             Number(item.hargaSebelumnya) || 0;
+
+
+        /*
+        ================================
+        HITUNG PERSENTASE PERUBAHAN
+        ================================
+        */
 
         let perubahan = 0;
 
@@ -1029,27 +1043,51 @@ function hitungEarlyWarning() {
         }
 
 
-        /* =========================
-           TENTUKAN STATUS
-        ========================= */
+        /*
+        ================================
+        TENTUKAN STATUS
+        ================================
+        */
 
         let status = "NORMAL";
-        let level = 1;
 
+        let level = 0;
+
+
+        /*
+        KRITIS
+        Harga naik >= 10%
+        */
 
         if (perubahan >= 10) {
 
             status = "KRITIS";
             level = 4;
 
+            kritis++;
+
         }
+
+
+        /*
+        WASPADA
+        Harga naik 5% - 9.99%
+        */
 
         else if (perubahan >= 5) {
 
             status = "WASPADA";
             level = 3;
 
+            waspada++;
+
         }
+
+
+        /*
+        PERHATIAN
+        Ketersediaan kurang
+        */
 
         else if (
             String(item.ketersediaan)
@@ -1060,14 +1098,41 @@ function hitungEarlyWarning() {
             status = "PERHATIAN";
             level = 2;
 
+            perhatian++;
+
         }
 
+
+        /*
+        NORMAL
+        */
+
+        else {
+
+            status = "NORMAL";
+            level = 1;
+
+            normal++;
+
+        }
+
+
+        /*
+        MASUKKAN DATA
+        */
 
         daftar.push({
 
             komoditi: item.komoditi,
+
+            harga: harga,
+
             perubahan: perubahan,
+
+            ketersediaan: item.ketersediaan,
+
             status: status,
+
             level: level
 
         });
@@ -1075,184 +1140,168 @@ function hitungEarlyWarning() {
     });
 
 
-    /* =========================
-       KELOMPOKKAN KOMODITAS
-    ========================= */
-
-    const kritis =
-        daftar.filter(item => item.status === "KRITIS");
-
-    const waspada =
-        daftar.filter(item => item.status === "WASPADA");
-
-    const perhatian =
-        daftar.filter(item => item.status === "PERHATIAN");
-
-    const normal =
-        daftar.filter(item => item.status === "NORMAL");
-
-
-    /* =========================
-       UPDATE JUMLAH KARTU
-    ========================= */
+    /*
+    ================================
+    UPDATE JUMLAH
+    ================================
+    */
 
     document.getElementById("ewKritis").innerText =
-        kritis.length;
+        kritis;
 
     document.getElementById("ewWaspada").innerText =
-        waspada.length;
+        waspada;
 
     document.getElementById("ewPerhatian").innerText =
-        perhatian.length;
+        perhatian;
 
     document.getElementById("ewNormal").innerText =
-        normal.length;
+        normal;
 
 
-    /* =========================
-       FORMAT KOMODITAS
-    ========================= */
+    /*
+    ================================
+    URUTKAN
+    KRITIS → WASPADA → PERHATIAN → NORMAL
+    ================================
+    */
 
-    function daftarKomoditas(list) {
+    daftar.sort(function(a, b) {
 
-        if (list.length === 0) {
+        return b.level - a.level;
 
-            return `
-                <div class="small text-muted">
-                    Tidak ada komoditas
-                </div>
-            `;
+    });
+
+
+    /*
+    ================================
+    TAMPILKAN TABEL
+    ================================
+    */
+
+    let html = "";
+
+    daftar.forEach(function(item, index) {
+
+
+        let badgeStatus = "";
+
+
+        if (item.status === "KRITIS") {
+
+            badgeStatus =
+                `<span class="badge bg-danger">
+                    🔴 KRITIS
+                </span>`;
+
+        }
+
+        else if (item.status === "WASPADA") {
+
+            badgeStatus =
+                `<span class="badge bg-warning text-dark">
+                    🟠 WASPADA
+                </span>`;
+
+        }
+
+        else if (item.status === "PERHATIAN") {
+
+            badgeStatus =
+                `<span class="badge bg-warning text-dark">
+                    🟡 PERHATIAN
+                </span>`;
+
+        }
+
+        else {
+
+            badgeStatus =
+                `<span class="badge bg-success">
+                    🟢 NORMAL
+                </span>`;
 
         }
 
 
-        return list.map(function(item) {
+        let perubahanText = "";
 
-            let persen = "";
+        if (item.perubahan > 0) {
 
-            if (item.perubahan > 0) {
+            perubahanText =
+                `<span class="text-danger fw-bold">
+                    ▲ ${item.perubahan.toFixed(1)}%
+                </span>`;
 
-                persen =
-                    `<span class="text-danger fw-bold">
-                        ▲ ${item.perubahan.toFixed(1)}%
-                    </span>`;
+        }
 
-            }
+        else if (item.perubahan < 0) {
 
-            else if (item.perubahan < 0) {
+            perubahanText =
+                `<span class="text-success fw-bold">
+                    ▼ ${Math.abs(item.perubahan).toFixed(1)}%
+                </span>`;
 
-                persen =
-                    `<span class="text-success fw-bold">
-                        ▼ ${Math.abs(item.perubahan).toFixed(1)}%
-                    </span>`;
+        }
 
-            }
+        else {
 
-            else {
+            perubahanText =
+                `<span class="text-secondary">
+                    ➖ 0%
+                </span>`;
 
-                persen =
-                    `<span class="text-secondary">
-                        ➖ 0%
-                    </span>`;
-
-            }
+        }
 
 
-            return `
-                <div class="small mb-1">
+        html += `
+
+            <tr>
+
+                <td class="text-center">
+                    ${index + 1}
+                </td>
+
+                <td>
                     ${getEmojiKomoditas(item.komoditi)}
-                    <strong>${item.komoditi}</strong>
-                    ${persen}
-                </div>
-            `;
+                    <strong>
+                        ${item.komoditi}
+                    </strong>
+                </td>
 
-        }).join("");
+                <td class="text-end">
 
-    }
+                    Rp ${item.harga.toLocaleString("id-ID")}
 
+                </td>
 
-    /* =========================
-       ISI KARTU
-    ========================= */
+                <td class="text-center">
 
-    const cardKritis =
-        document.getElementById("ewKritis")
-        ?.closest(".card");
+                    ${perubahanText}
 
-    const cardWaspada =
-        document.getElementById("ewWaspada")
-        ?.closest(".card");
+                </td>
 
-    const cardPerhatian =
-        document.getElementById("ewPerhatian")
-        ?.closest(".card");
+                <td class="text-center">
 
-    const cardNormal =
-        document.getElementById("ewNormal")
-        ?.closest(".card");
+                    ${item.ketersediaan || "-"}
 
+                </td>
 
-    if (cardKritis) {
+                <td class="text-center">
 
-        cardKritis.querySelector(".card-body")
-        .innerHTML = `
+                    ${badgeStatus}
 
-            <div class="small text-muted mb-2">
-                Harga naik ≥ 10%
-            </div>
+                </td>
 
-            ${daftarKomoditas(kritis)}
+            </tr>
 
         `;
 
-    }
+    });
 
 
-    if (cardWaspada) {
-
-        cardWaspada.querySelector(".card-body")
-        .innerHTML = `
-
-            <div class="small text-muted mb-2">
-                Harga naik 5%–9,99%
-            </div>
-
-            ${daftarKomoditas(waspada)}
-
-        `;
-
-    }
-
-
-    if (cardPerhatian) {
-
-        cardPerhatian.querySelector(".card-body")
-        .innerHTML = `
-
-            <div class="small text-muted mb-2">
-                Ketersediaan stok kurang
-            </div>
-
-            ${daftarKomoditas(perhatian)}
-
-        `;
-
-    }
-
-
-    if (cardNormal) {
-
-        cardNormal.querySelector(".card-body")
-        .innerHTML = `
-
-            <div class="small text-muted mb-2">
-                Harga relatif stabil dan kondisi normal
-            </div>
-
-            ${daftarKomoditas(normal)}
-
-        `;
-
-    }
+    document.getElementById(
+        "tbodyEarlyWarning"
+    ).innerHTML = html;
 
 }
