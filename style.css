@@ -4238,3 +4238,33 @@ button.kategori-btn.active{
         margin-bottom:6px !important;
     }
 }
+
+/* =========================================
+   PEDOMAN DATA - DESKTOP
+   3 KOLOM SEJAJAR
+   ========================================= */
+
+@media (min-width:577px){
+
+    .pedoman-data .d-flex{
+        display:grid !important;
+        grid-template-columns:repeat(3, 1fr);
+        gap:14px 20px !important;
+        margin-bottom:14px !important;
+    }
+
+    .pedoman-data .d-flex > div{
+        min-width:0;
+    }
+
+    .pedoman-data b{
+        display:block;
+        white-space:nowrap;
+    }
+
+    .pedoman-data small{
+        display:block !important;
+        line-height:1.35;
+        margin-top:3px;
+    }
+}
