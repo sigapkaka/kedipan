@@ -4191,51 +4191,68 @@ button.kategori-btn.active{
 }
 
 /* =========================================
-   FOOTER MOBILE - SEMUA CENTER
+   FOOTER HP - LOGO DAN TEKS CENTER
    ========================================= */
 
 @media (max-width:576px){
 
     .footer{
         text-align:center !important;
-        padding:35px 18px !important;
+    }
+
+    .footer .container{
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+
+    .footer .row{
+        justify-content:center !important;
+    }
+
+    .footer .col-md-6{
+        width:100% !important;
+        text-align:center !important;
     }
 
     .footer-brand{
         display:flex !important;
         flex-direction:column !important;
         align-items:center !important;
-        text-align:center !important;
-    }
-
-    .footer-brand img{
-        display:block !important;
-        margin:0 auto 12px !important;
-    }
-
-    .footer-brand-text{
+        justify-content:center !important;
         text-align:center !important;
         width:100% !important;
     }
 
-    .footer-brand-text .sigap-title{
+    .footer-logo-box{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        margin:0 auto 12px !important;
+    }
+
+    .footer-logo-sigap{
+        display:block !important;
+        margin:0 auto !important;
+    }
+
+    .footer-brand-text{
+        width:100% !important;
+        text-align:center !important;
+        margin:0 auto !important;
+    }
+
+    .footer-brand-text h5{
         text-align:center !important;
         margin:0 0 8px !important;
     }
 
+    .footer-brand-text p,
     .footer-brand-text span{
         display:block !important;
-        text-align:center !important;
-    }
-
-    .footer-info{
-        text-align:center !important;
         width:100% !important;
-    }
-
-    .footer-info p{
         text-align:center !important;
-        margin-bottom:6px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
     }
 }
 
