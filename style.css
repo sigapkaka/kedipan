@@ -1,0 +1,4122 @@
+/**************************************************
+SIGAP KAKA
+Style.css
+**************************************************/
+
+:root{
+
+--primary:#198754;
+--secondary:#0d6efd;
+--warning:#ffc107;
+--danger:#dc3545;
+--light:#f8f9fa;
+--dark:#2c3e50;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+/*==================================================
+AREA LATAR SILUET
+==================================================*/
+
+.hero-siluet{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding-top:1px;
+
+    padding-bottom:20px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f8fbf4 0%,
+        #f1f7eb 50%,
+        #e5efdc 100%
+    );
+
+}
+
+/*==================================================
+SILUET PERBUKITAN
+==================================================*/
+
+.hero-siluet::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:1100px;
+    height:220px;
+
+    left:-350px;
+
+    bottom:-185px;
+
+    border-radius:50% 60% 0 0;
+
+    background:rgba(46,125,50,.07);
+
+    transform:rotate(3deg);
+
+}
+
+.hero-siluet::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:1200px;
+    height:240px;
+
+    right:-400px;
+
+    bottom:-200px;
+
+    border-radius:60% 50% 0 0;
+
+    background:rgba(27,94,32,.055);
+
+    transform:rotate(-3deg);
+
+}
+
+/*==========================
+LOADING
+==========================*/
+
+#loading{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:99999;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+}
+
+/*==========================
+HEADER
+==========================*/
+
+.header{
+    background:linear-gradient(135deg,#1b5e20,#2e7d32,#43a047);
+    color:white;
+    padding:30px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    background-size:200% 200%;
+    position:relative;
+}
+
+.header h5{
+    font-size:22px;
+    font-weight:500;
+    color:#f8f9fa;
+}
+
+.header p{
+    margin-top:12px;
+    font-size:15px;
+    color:#ecf0f1;
+    line-height:1.6;
+}
+
+/*==================================================
+HEADER
+==================================================*/
+
+
+/*==========================
+RUNNING TEXT
+==========================*/
+
+.running{
+
+overflow:hidden;
+
+background:#198754;
+
+color:white;
+
+height:42px;
+
+line-height:42px;
+
+white-space:nowrap;
+
+margin-bottom:20px;
+
+}
+
+.running-text{
+
+display:inline-block;
+
+padding-left:100%;
+
+font-weight:500;
+
+}
+
+@keyframes running{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(-100%);
+
+}
+
+}
+
+/*==========================
+BLINK
+==========================*/
+
+.blink{
+
+animation:blink 1s infinite;
+
+font-weight:bold;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.25;
+
+}
+
+}
+
+/* =====================================================
+   CARD DASHBOARD
+   SIGAP KAKA
+===================================================== */
+
+.dashboard-card{
+
+   position:relative;
+
+    width:100%;
+
+    height:auto;
+    min-height:170px;
+    max-height:none;
+
+    box-sizing:border-box;
+    overflow:visible;
+
+    border-radius:22px;
+
+    padding:24px 20px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        68px;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:0 8px 18px rgba(34,60,43,.15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    cursor:pointer;
+
+    isolation:isolate;
+
+}
+
+/* ==========================
+   HOVER
+========================== */
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 14px 28px rgba(34,60,43,.20);
+
+}
+
+.dashboard-card:hover::before{
+
+left:-90px;
+
+}
+
+/* ==========================
+   DEKORASI
+========================== */
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border-radius:50%;
+
+    right:-55px;
+    top:-65px;
+
+    z-index:-1;
+
+}
+
+
+.dashboard-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:90px;
+
+    left:-35px;
+    bottom:-70px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.07);
+
+    transform:
+        rotate(-7deg);
+
+    z-index:-1;
+
+}
+
+
+/* ==========================
+   AREA TEKS
+========================== */
+
+.dashboard-card > div:not(.icon){
+
+    width:100%;
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+/* ==========================
+   ICON
+========================== */
+
+.dashboard-card .icon{
+
+    position:relative;
+
+    z-index:2;
+
+    width:68px;
+    height:68px;
+
+    min-width:68px;
+    min-height:68px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.14);
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    color:white;
+    
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.15);
+
+}
+
+/*==========================
+CARD
+==========================*/
+
+.card{
+
+border:none;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+animation:fadeIn .6s ease;
+
+}
+
+/*==========================
+CHART
+==========================*/
+
+#chartHarga{
+
+width:100%;
+
+height:420px;
+
+}
+/*==================================================
+TABLE
+==================================================*/
+
+.table{
+
+margin-bottom:0;
+
+position:relative;
+
+z-index:3;
+
+--bs-table-bg:transparent;
+
+}
+
+.table thead{
+
+background:linear-gradient(180deg,#2e8b57,#1d6f42);
+
+color:white;
+
+}
+
+.table thead th{
+    background:linear-gradient(180deg,#dff4e7,#c5e4d2);
+    color:#1f3d2b;
+    text-align:center;
+    vertical-align:middle;
+    font-weight:700;
+    letter-spacing:.4px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.table tbody td{
+
+    background:transparent !important;
+
+    vertical-align:middle;
+
+}
+
+.table tbody tr{
+
+transition:all .25s ease;
+
+--bs-table-bg:transparent;
+
+}
+
+.table tbody tr:hover{
+
+background:#fff6d8;
+
+}
+
+/*==================================================
+FORM
+==================================================*/
+
+.form-control,
+.form-select{
+
+border-radius:10px;
+
+padding:10px;
+
+border:1px solid #ced4da;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 0 .2rem rgba(25,135,84,.2);
+
+}
+
+/*==================================================
+BUTTON
+==================================================*/
+
+.btn{
+
+border-radius:10px;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.footer{
+
+margin-top:60px;
+
+background:#198754;
+
+color:white;
+
+padding:35px 0;
+
+}
+
+.footer p{
+
+margin-bottom:6px;
+
+font-size:14px;
+
+}
+
+/*==================================================
+BACK TO TOP
+==================================================*/
+
+#btnTop{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+display:none;
+
+z-index:999;
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+BADGE STATUS
+==================================================*/
+
+.badge-naik{
+
+background:#dc3545;
+
+color:white;
+
+padding:6px 12px;
+
+border-radius:30px;
+
+font-size:12px;
+
+}
+
+.badge-turun{
+
+background:#198754;
+
+color:white;
+
+padding:6px 12px;
+
+border-radius:30px;
+
+font-size:12px;
+
+}
+
+.badge-stabil{
+
+background:#ffc107;
+
+color:black;
+
+padding:6px 12px;
+
+border-radius:30px;
+
+font-size:12px;
+
+}
+
+/*==================================================
+MODAL
+==================================================*/
+
+.modal-content{
+
+border-radius:18px;
+
+border:none;
+
+}
+
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#198754;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#146c43;
+
+}
+
+/*==================================================
+WARNA DASHBOARD SIGAP KAKA
+NATURAL AGRICULTURE PALETTE
+==================================================*/
+
+/* JUMLAH KOMODITI */
+
+.dashboard-card.bg-success{
+
+background:
+linear-gradient(
+135deg,
+#174C35 0%,
+#246B49 55%,
+#3D8B5D 100%
+)!important;
+
+}
+
+/* HARGA NAIK */
+
+.dashboard-card.bg-primary{
+
+background:
+linear-gradient(
+135deg,
+#355F59 0%,
+#4A7A70 55%,
+#6A9B8E 100%
+)!important;
+
+}
+
+/* HARGA TURUN */
+
+.dashboard-card.bg-warning{
+
+background:
+linear-gradient(
+135deg,
+#9A6B22 0%,
+#B88732 55%,
+#D0A64F 100%
+)!important;
+
+color:white!important;
+
+}
+
+/* UPDATE TERAKHIR */
+
+.dashboard-card.bg-danger{
+
+background:
+linear-gradient(
+135deg,
+#7B463B 0%,
+#9B5B4C 55%,
+#B97260 100%
+)!important;
+
+}
+
+/*==================================================
+TABEL TRANSPARAN
+==================================================*/
+
+.table-responsive{
+
+position:relative;
+
+z-index:3;
+
+}
+
+.table tbody{
+
+background:rgba(255,255,255,.55);
+
+}
+
+/*==================================================
+SLIDER KOMODITAS PANGAN
+==================================================*/
+
+.komoditas-slider{
+    width:100%;
+    overflow:hidden;
+    padding:22px 0;
+    background:#ffffff;
+}
+
+.komoditas-track{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    width:max-content;
+    padding:0 20px;
+
+    animation:komoditasBerjalan 45s linear infinite;
+}
+
+@keyframes komoditasBerjalan{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+.komoditas-item{
+
+    width:100px;
+    min-width:100px;
+
+    text-align:center;
+
+    flex-shrink:0;
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+
+    user-select:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/*==============================
+MODE AKTIF (DESKTOP + HP)
+==============================*/
+
+.komoditas-item.aktif{
+
+    transform:scale(1.12);
+
+    z-index:20;
+
+}
+
+.komoditas-foto{
+
+    position:relative;
+
+    width:110px;
+    height:110px;
+
+    margin:0 auto 12px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+linear-gradient(
+180deg,
+#ffffff 0%,
+#f8fcf6 45%,
+#edf7e8 100%
+);
+
+    border:2px solid rgba(46,125,50,.16);
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+box-shadow:
+    0 10px 22px rgba(46,125,50,.12),
+    inset 0 2px 4px rgba(255,255,255,.9);
+
+}
+
+/*==================================================
+EMOJI KOMODITAS
+==================================================*/
+
+.emoji-komoditas{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-block;
+
+    font-size:60px;
+
+    line-height:1;
+
+    filter:
+        drop-shadow(
+            0 5px 5px rgba(0,0,0,.14)
+        );
+}
+
+/* EFEK CAHAYA */
+
+.komoditas-foto::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    left:8px;
+    top:5px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.50);
+
+    filter:blur(8px);
+
+}
+
+
+/* HOVER */
+
+.komoditas-item:hover
+.komoditas-foto{
+
+    transform:
+    translateY(-8px)
+    scale(1.10);
+
+box-shadow:
+    0 22px 40px rgba(46,125,50,.28);
+    
+}
+.komoditas-item:hover .komoditas-foto{
+
+    border-color:#66bb6a;
+
+}
+
+
+.komoditas-item:hover
+.emoji-komoditas{
+
+    animation:
+        komoditasPop .5s ease;
+
+}
+
+@keyframes komoditasPop{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.20);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.komoditas-nama{
+    font-size:14px;
+    font-weight:600;
+    color:#333;
+    white-space:normal;
+    line-height:1.4;
+}
+
+/*==================================================
+DETAIL TEKS DASHBOARD
+==================================================*/
+
+.dashboard-card > div:first-child{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.dashboard-card h2{
+
+font-size:36px;
+
+font-weight:750;
+
+margin-bottom:5px;
+
+letter-spacing:-1px;
+
+color:#ffffff;
+
+text-shadow:0 1px 2px rgba(0,0,0,.08);
+
+}
+
+.dashboard-card p{
+
+margin:0;
+
+font-size:15px;
+
+font-weight:500;
+
+letter-spacing:.2px;
+
+line-height:1.5;
+
+color:rgba(255,255,255,.92);
+
+}
+
+/*==================================================
+BRANDING LOGO SIGAP KAKA
+==================================================*/
+
+.logo-sigap-kaka:hover{
+
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+
+}
+
+/*==================================================
+BACKGROUND TEPI WEB SIGAP KAKA
+==================================================*/
+
+html{
+
+    min-height:100%;
+
+    background:#edf4e9;
+
+}
+
+body{
+
+    position:relative;
+
+    min-height:100vh;
+
+    border-left:6px solid #2f7d4e !important;
+
+    border-right:6px solid #2f7d4e !important;
+
+    box-shadow:
+        inset 10px 0 16px -16px rgba(23,76,53,.70),
+        inset -10px 0 16px -16px rgba(23,76,53,.70);
+
+    background:
+        radial-gradient(
+            circle at 0% 25%,
+            rgba(46,125,50,.16) 0%,
+            rgba(46,125,50,.06) 18%,
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 100% 70%,
+            rgba(190,145,45,.14) 0%,
+            rgba(190,145,45,.05) 18%,
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #eaf3e6 0%,
+            #f6f8ef 48%,
+            #edf4e8 100%
+        ) !important;
+
+    background-attachment:scroll;
+
+}
+
+/*==================================================
+BINGKAI HALUS AREA WEB
+==================================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            rgba(28,105,61,.10) 0%,
+
+            rgba(28,105,61,.03) 5%,
+
+            transparent 14%,
+
+            transparent 86%,
+
+            rgba(176,132,43,.03) 95%,
+
+            rgba(176,132,43,.10) 100%
+        );
+
+}
+
+/*==================================================
+EFEK GARIS TEPI
+==================================================*/
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    z-index:9999;
+
+    background:
+        linear-gradient(
+            90deg,
+            #174c35,
+            #3d8b5d,
+            #c19a43,
+            #3d8b5d,
+            #174c35
+        );
+
+}
+
+/*==================================================
+LOGO SIGAP KAKA PADA FOOTER
+==================================================*/
+
+.footer-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+/*==================================================
+WADAH LOGO
+==================================================*/
+
+.footer-logo-box{
+
+    width:90px;
+
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/*==================================================
+LOGO SIGAP KAKA FOOTER - WARNA ASLI
+==================================================*/
+
+.footer-logo-sigap{
+
+    display:block;
+
+    width:100px !important;
+    height:100px !important;
+
+    object-fit:contain;
+
+    mix-blend-mode:normal !important;
+
+    opacity:1 !important;
+
+    filter:none !important;
+
+    background:#ffffff;
+
+    padding:4px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.65);
+
+    box-shadow:
+        0 6px 16px rgba(0,0,0,.20);
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.footer-logo-sigap:hover{
+
+    transform:scale(1.06);
+
+}
+
+/*==================================================
+LOGO FOOTER - TAMPILAN HP
+==================================================*/
+
+@media(max-width:768px){
+
+    .footer-logo-sigap{
+
+        width:85px !important;
+        height:85px !important;
+
+        padding:3px;
+
+        border-radius:13px;
+
+    }
+
+}
+
+/*==================================================
+RESPONSIVE FOOTER LOGO
+==================================================*/
+
+@media(max-width:768px){
+
+    .footer-brand{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+        gap:10px;
+
+    }
+
+
+    .footer-logo-box{
+
+        width:90px;
+
+        height:90px;
+
+        min-width:90px;
+
+    }
+
+
+    .footer-brand-text{
+
+        align-items:center;
+
+    }
+
+
+    .footer-brand-text h5{
+
+        font-size:19px;
+
+    }
+
+}
+
+/*==================================================
+TEKS BRAND FOOTER
+==================================================*/
+
+.footer-brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.footer-brand-text h5{
+
+    margin:0 0 5px;
+
+    font-size:21px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.footer-brand-text p{
+
+    margin:0 0 4px;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    color:rgba(255,255,255,.92);
+
+}
+
+.footer-brand-text span{
+
+    display:block;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    color:rgba(255,255,255,.78);
+
+}
+
+
+/*==================================================
+INFORMASI FOOTER KANAN
+==================================================*/
+
+.footer-info p{
+
+    margin:0 0 7px;
+
+    font-size:13px;
+
+    color:rgba(255,255,255,.90);
+
+}
+
+.footer-info p:last-child{
+
+    margin-bottom:0;
+
+}
+
+/*==================================================
+SIGAP KAKA - MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .sigap-title{
+
+        font-size:29px !important;
+
+        letter-spacing:.8px;
+
+        -webkit-text-stroke:
+            .5px rgba(15,67,42,.70);
+
+        text-shadow:
+            0 1px 0 rgba(255,255,255,.15),
+            0 2px 0 rgba(17,75,45,.35),
+            0 3px 6px rgba(0,0,0,.15);
+
+    }
+
+
+    .sigap-brand{
+
+        gap:7px;
+
+        margin-bottom:10px;
+
+        padding-bottom:8px;
+
+    }
+
+    .sigap-brand::after{
+
+        width:135px;
+
+        height:2px;
+
+    }
+
+}
+
+/*==================================================
+AREA UTAMA WEB
+==================================================*/
+
+.header,
+.running,
+.hero-siluet,
+.footer{
+
+    position:relative;
+
+}
+
+/*==================================================
+GARIS AKSEN HEADER DAN FOOTER
+==================================================*/
+
+.header::before,
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:12px;
+    right:12px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(229,190,83,.35) 20%,
+            rgba(229,190,83,.75) 50%,
+            rgba(229,190,83,.35) 80%,
+            transparent 100%
+        );
+
+    pointer-events:none;
+
+}
+
+.header::before{
+
+    bottom:0;
+
+}
+
+.footer::before{
+
+    top:0;
+
+}
+
+/*==================================================
+FRAME TEPI BODY - HP
+==================================================*/
+
+@media(max-width:768px){
+
+    body{
+
+        border-left-width:4px !important;
+
+        border-right-width:4px !important;
+
+        box-shadow:
+            inset 6px 0 10px -10px rgba(23,76,53,.55),
+            inset -6px 0 10px -10px rgba(23,76,53,.55);
+
+    }
+
+}
+
+.motto-line{
+
+    display:block;
+
+    width:38px;
+
+    height:1px;
+
+    flex-shrink:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(245,215,123,.90)
+        );
+
+}
+
+.motto-line:last-child{
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(245,215,123,.90),
+            transparent
+        );
+
+}
+
+    /* ==========================
+       TAGLINE HEADER
+    ========================== */
+
+    .header h1 + div,
+    .header h1 + p,
+    .header .tagline,
+    .header .header-tagline,
+    .header .motto{
+
+        width:
+            calc(100% - 10px) !important;
+
+        max-width:
+            100% !important;
+
+        margin:
+            0 auto 7px auto !important;
+
+        padding:
+            0 !important;
+
+        box-sizing:
+            border-box !important;
+
+        font-size:
+            5.5px !important;
+
+        line-height:
+            1.4 !important;
+
+        letter-spacing:
+            .25px !important;
+
+        text-align:
+            center !important;
+
+        white-space:
+            normal !important;
+
+        overflow:
+            hidden !important;
+
+        text-overflow:
+            clip !important;
+
+        word-break:
+            normal !important;
+
+    }
+
+    /* ==========================================
+       LOGO KECIL SIGAP
+    ========================================== */
+
+    .header .logo-sigap-kaka{
+
+        width:27px !important;
+
+        height:27px !important;
+
+        min-width:27px !important;
+
+        object-fit:contain !important;
+
+    }
+
+    /* ==========================================
+       SIGAP KAKA
+    ========================================== */
+
+    .header .sigap-title{
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:25px !important;
+
+        line-height:1 !important;
+
+        letter-spacing:.3px !important;
+
+        white-space:nowrap !important;
+
+    }
+
+    /* ==========================================
+       MOTTO
+    ========================================== */
+
+    .header .sigap-motto{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:3px !important;
+
+        margin:5px auto 7px !important;
+
+        padding:0 !important;
+
+        box-sizing:border-box !important;
+
+        overflow:hidden !important;
+
+    }
+
+    /* ==========================================
+       TEKS MOTTO
+    ========================================== */
+
+    .header .motto-text{
+
+        display:block !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:6px !important;
+
+        font-weight:600 !important;
+
+        line-height:1.45 !important;
+
+        letter-spacing:.25px !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+        text-overflow:clip !important;
+
+        word-break:normal !important;
+
+    }
+
+    /* ==========================================
+       GARIS BAWAH HEADER
+    ========================================== */
+
+    .header .header-line{
+
+        width:45% !important;
+
+        margin:9px auto 0 !important;
+
+    }
+
+    /* =================================================
+       AREA BRAND SIGAP KAKA
+    ================================================= */
+
+    .header .sigap-brand{
+
+        position:relative !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        min-height:0 !important;
+
+        display:flex !important;
+
+        flex-direction:row !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:5px !important;
+
+        margin:0 auto 5px !important;
+
+        padding:0 0 6px !important;
+
+        overflow:visible !important;
+
+    }
+
+    .header .sigap-brand::after{
+
+        width:100px !important;
+
+        height:1px !important;
+
+    }
+
+    /* =================================================
+       LOGO KECIL SIGAP KAKA
+    ================================================= */
+
+    .header .logo-sigap-kaka{
+
+        display:block !important;
+
+        width:27px !important;
+
+        height:27px !important;
+
+        min-width:27px !important;
+
+        max-width:27px !important;
+
+        min-height:27px !important;
+
+        margin:0 !important;
+
+        padding:1px !important;
+
+        border-radius:5px !important;
+
+        object-fit:contain !important;
+
+        flex:0 0 27px !important;
+
+    }
+
+    /* =================================================
+       JUDUL SIGAP KAKA
+    ================================================= */
+
+    .header .sigap-title,
+    .header .sigap-brand h1{
+
+        width:auto !important;
+
+        min-width:0 !important;
+
+        min-height:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:24px !important;
+
+        font-weight:800 !important;
+
+        line-height:1 !important;
+
+        letter-spacing:.2px !important;
+
+        white-space:nowrap !important;
+
+        text-align:center !important;
+
+    }
+
+    /* =================================================
+       MOTTO
+    ================================================= */
+
+    .header .sigap-motto{
+
+        position:relative !important;
+
+        display:block !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:5px auto 7px !important;
+
+        padding:0 1px !important;
+
+        box-sizing:border-box !important;
+
+        overflow:visible !important;
+
+        text-align:center !important;
+
+    }
+
+    /* GARIS MOTTO HILANG KHUSUS HP */
+
+    .header .motto-line{
+
+        display:none !important;
+
+    }
+
+    /* TEKS MOTTO */
+
+    .header .motto-text{
+
+        display:block !important;
+
+        position:relative !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 auto !important;
+
+        padding:0 !important;
+
+        color:#f5d77b !important;
+
+        font-size:5.5px !important;
+
+        font-weight:700 !important;
+
+        line-height:1.45 !important;
+
+        letter-spacing:.15px !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+        text-overflow:clip !important;
+
+        word-break:normal !important;
+
+        overflow-wrap:normal !important;
+
+    }
+
+    /* =================================================
+       SISTEM INFORMASI HARGA PANGAN
+    ================================================= */
+
+    .header h5{
+
+    width:100% !important;
+
+    max-width:100% !important;
+
+    margin:5px auto !important;
+
+    padding:0 1px !important;
+
+    font-size:12px !important;
+
+    font-weight:500 !important;
+
+    line-height:1.25 !important;
+
+    text-align:center !important;
+
+    white-space:normal !important;
+
+    overflow:visible !important;
+
+}
+
+    .header .header-line{
+
+        width:70px !important;
+
+        margin:8px auto 0 !important;
+
+        border-width:1px !important;
+
+    }
+
+    /* =================================================
+       4 KARTU DASHBOARD
+    ================================================= */
+
+    .hero-siluet .row.g-4{
+
+        --bs-gutter-x:12px !important;
+
+        --bs-gutter-y:12px !important;
+
+    }
+
+    .hero-siluet .row.g-4 > .col-lg-3{
+
+        width:50% !important;
+
+        max-width:50% !important;
+
+        flex:0 0 50% !important;
+
+        display:flex !important;
+
+    }
+
+    .dashboard-card > div:not(.icon),
+    .dashboard-card > div:first-child{
+
+        width:100% !important;
+
+        min-width:0 !important;
+
+        height:100% !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        align-items:flex-start !important;
+
+        justify-content:center !important;
+
+    }
+
+    /* =================================================
+       ANGKA KARTU
+    ================================================= */
+
+    .dashboard-card h2{
+
+    width:100% !important;
+    min-width:0 !important;
+
+    margin:0 0 5px !important;
+    padding:0 !important;
+
+    font-size:26px !important;
+    font-weight:800 !important;
+
+    line-height:1 !important;
+
+    letter-spacing:0 !important;
+
+    white-space:normal !important;
+        
+    overflow:visible !important;
+
+    text-shadow:0 2px 5px rgba(0,0,0,.15);
+
+}
+
+    /* TANGGAL UPDATE LEBIH KECIL */
+
+    #updateTerakhir{
+
+        font-size:19px !important;
+
+        letter-spacing:-.7px !important;
+
+    }
+
+    /* =================================================
+       ICON KARTU
+    ================================================= */
+
+    .dashboard-card .icon{
+
+        width:44px !important;
+
+        height:44px !important;
+
+        min-width:44px !important;
+
+        min-height:44px !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        border-radius:13px !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        font-size:20px !important;
+
+        backdrop-filter:blur(12px);
+
+        -webkit-backdrop-filter:blur(12px);
+
+    }
+    
+    .dashboard-card:hover .icon{
+
+    transform:
+
+    rotate(-8deg)
+
+    scale(1.08);
+
+}
+/* =====================================================
+   FINAL MOTTO FULL WIDTH
+   SIGAP KAKA
+===================================================== */
+
+.sigap-motto-full{
+
+    width:100%;
+
+    max-width:fit-content;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin:14px auto 0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+.sigap-motto-full .motto-text{
+
+    display:block;
+
+    width:auto;
+
+    max-width:100%;
+
+    margin:0;
+
+    padding:0;
+
+    color:#f5d77b;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+    letter-spacing:1.4px;
+
+    text-align:center;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+}
+
+
+.sigap-motto-full .motto-line{
+
+    display:block;
+
+    width:38px;
+
+    height:1px;
+
+    flex-shrink:0;
+
+}
+
+/* =====================================================
+   MOTTO FULL WIDTH - HP
+===================================================== */
+
+@media screen and (max-width:576px){
+
+    .header .sigap-motto-full{
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        gap:4px !important;
+
+        margin:12px auto 0 !important;
+
+        padding:0 4px !important;
+
+        box-sizing:border-box !important;
+
+        overflow:visible !important;
+
+    }
+
+    .header .sigap-motto-full .motto-line{
+
+        display:none !important;
+
+    }
+
+    .header .sigap-motto-full .motto-text{
+
+        display:block !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 auto !important;
+
+        padding:0 !important;
+
+        font-size:7px !important;
+
+        font-weight:700 !important;
+
+        line-height:1.4 !important;
+
+        letter-spacing:.35px !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+        overflow-wrap:normal !important;
+
+        word-break:normal !important;
+
+    }
+
+}
+
+    /* ==========================================
+       MOTTO
+    ========================================== */
+
+    .header .sigap-motto-full{
+
+        width:100% !important;
+
+        max-width:1000px !important;
+
+        margin:18px auto 0 !important;
+
+        padding:0 20px !important;
+
+        box-sizing:border-box !important;
+
+        text-align:center !important;
+
+    }
+
+    .header .sigap-motto-full .motto-text{
+
+        display:block !important;
+
+        width:100% !important;
+
+        margin:0 auto !important;
+
+        padding:0 !important;
+
+        font-size:15px !important;
+
+        font-weight:700 !important;
+
+        line-height:1.4 !important;
+
+        letter-spacing:1.4px !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+    }
+
+    .header .sigap-motto-full .motto-line{
+
+        width:60px !important;
+
+    }
+
+    /* =================================================
+       MOTTO FULL WIDTH
+    ================================================= */
+
+    .header .sigap-motto-full{
+
+        position:relative !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        display:block !important;
+
+        margin:11px auto 0 !important;
+
+        padding:0 5px !important;
+
+        box-sizing:border-box !important;
+
+        text-align:center !important;
+
+        overflow:visible !important;
+
+    }
+
+    .header .sigap-motto-full .motto-line{
+
+        display:none !important;
+
+    }
+
+    .header .sigap-motto-full .motto-text{
+
+        display:block !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 auto !important;
+
+        padding:0 !important;
+
+        font-size:7px !important;
+
+        font-weight:700 !important;
+
+        line-height:1.4 !important;
+
+        letter-spacing:.35px !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+
+        overflow:visible !important;
+
+        text-overflow:clip !important;
+
+        word-break:normal !important;
+
+        overflow-wrap:normal !important;
+
+    }
+
+
+    /* =================================================
+       DASHBOARD GRID
+       2 x 2
+    ================================================= */
+
+    .hero-siluet .row.g-4{
+
+        --bs-gutter-x:12px !important;
+
+        --bs-gutter-y:12px !important;
+
+    }
+
+    .hero-siluet .row.g-4 > .col-lg-3{
+
+        width:50% !important;
+
+        max-width:50% !important;
+
+        flex:0 0 50% !important;
+
+        display:flex !important;
+
+    }
+
+    /* =================================================
+       DASHBOARD CARD
+       SEMUA UKURAN SAMA
+    ================================================= */
+
+    .dashboard-card{
+
+        position:relative !important;
+
+        width:100% !important;
+
+       height:auto !important;
+       min-height:160px !important;
+       max-height:none !important;
+
+        margin:0 !important;
+
+        padding:14px 11px !important;
+
+        display:grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            43px !important;
+
+        align-items:center !important;
+
+        gap:6px !important;
+
+        box-sizing:border-box !important;
+
+        border-radius:16px !important;
+
+        overflow:visible !important;
+
+    }
+
+    /* =================================================
+       KETERANGAN DASHBOARD
+    ================================================= */
+
+    .dashboard-card p{
+
+        width:100% !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        font-size:9px !important;
+
+        font-weight:500 !important;
+
+        line-height:1.35 !important;
+
+        letter-spacing:0 !important;
+
+        white-space:normal !important;
+
+    }
+
+    /* =================================================
+       ICON DASHBOARD
+    ================================================= */
+
+    .dashboard-card .icon{
+
+        width:43px !important;
+        height:43px !important;
+
+        min-width:43px !important;
+        min-height:43px !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        border-radius:13px !important;
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        font-size:20px !important;
+
+    }
+
+    /* =================================================
+       RUNNING TEXT
+    ================================================= */
+
+    .running{
+
+        height:36px !important;
+
+        line-height:36px !important;
+
+        margin-bottom:15px !important;
+
+    }
+
+    .running-text{
+
+        font-size:12px !important;
+
+    }
+
+}
+
+/* ======================================
+   GALERI FOTO SIGAP KAKA
+====================================== */
+
+.galeri-slider{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+}
+
+.galeri-slider img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    display:block;
+
+    transform:scale(1);
+
+    transition:opacity .5s ease;
+
+}
+
+.galeri-judul{
+
+    padding:14px;
+    text-align:center;
+    font-size:20px;
+    font-weight:700;
+    color:#2e7d32;
+    background:#f8f9fa;
+
+}
+
+@media(max-width:768px){
+
+    .galeri-slider{
+
+        margin:15px auto;
+
+    }
+
+    .galeri-slider img{
+
+        height:180px;
+
+    }
+
+    .galeri-judul{
+
+    font-size:17px;
+
+}
+
+} 
+
+/*====================================
+HEADER ACTION
+====================================*/
+
+.header-action{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    gap:10px;
+    margin:6px 0 0 !important;
+}
+
+.header-action .btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    min-width:145px;
+
+}
+
+.header-action .btn-success{
+
+    margin-right:auto;
+
+}
+
+/*==================================
+WARNA BARIS TABEL
+==================================*/
+
+.table tbody tr:nth-child(odd){
+
+    background:#f8fcf9;
+
+}
+
+.table tbody tr:nth-child(even){
+
+    background:#eef7f1;
+
+}
+
+/*==================================
+EFEK HOVER
+==================================*/
+
+.table tbody tr:hover{
+
+    background:#fff6d9 !important;
+
+    cursor:pointer;
+
+}
+
+/*==================================
+KOLOM HARGA
+==================================*/
+
+.table tbody td:nth-child(3){
+
+    color:#198754;
+
+    font-weight:700;
+
+    font-size:17px;
+
+}
+
+/*==================================
+BADGE KETERSEDIAAN
+==================================*/
+
+.badge-banyak{
+
+    background:#d1fae5;
+
+    color:#065f46;
+
+}
+
+.badge-cukup{
+
+    background:#fff3cd;
+
+    color:#b45309;
+}
+
+.badge-kurang{
+
+    background:#f8d7da;
+
+    color:#842029;
+
+}
+
+.badge-banyak,
+.badge-cukup,
+.badge-kurang{
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-weight:700;
+
+    display:inline-block;
+
+}
+
+/*==================================
+BADGE TREN HARGA
+==================================*/
+
+.badge-naik{
+
+    background:#d1fae5;
+
+    color:#0f5132;
+
+    border:1px solid #75d6a2;
+
+}
+
+.badge-turun{
+
+    background:#fde2e2;
+
+    color:#b42318;
+
+    border:1px solid #f5a3a3;
+
+}
+
+.badge-tetap{
+
+    background:#eceff3;
+
+    color:#495057;
+
+    border:1px solid #cfd4da;
+
+}
+
+/*==================================
+ANIMASI TREN
+==================================*/
+
+@keyframes naik{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-2px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes turun{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(2px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/*==================================
+NOMOR URUT
+==================================*/
+
+.nomor-urut{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    background:linear-gradient(180deg,#198754,#0d6b43);
+
+    color:#fff;
+
+    font-weight:700;
+
+    box-shadow:0 3px 8px rgba(25,135,84,.25);
+
+}
+
+/*==================================
+NAMA KOMODITAS
+==================================*/
+
+.nama-komoditi{
+
+    font-weight:700;
+
+    color:#1c3d2f;
+
+    transition:.25s;
+
+}
+
+.nama-komoditi:hover{
+
+    color:#198754;
+
+    padding-left:8px;
+
+}
+
+/*==================================================
+OVERRIDE DASHBOARD CARD V2
+==================================================*/
+
+.dashboard-card h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:42px;
+
+    height:3px;
+
+    margin-top:10px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffd54f,
+        transparent
+    );
+
+}
+
+/*==========================================
+SIGAP BRAND PRESISI
+==========================================*/
+
+.logo-sigap-kaka{
+
+    width:82px !important;
+    height:84px !important;
+
+    min-width:80px;
+
+    padding:2px;
+
+    margin-top:-2px;
+
+}
+
+.sigap-title{
+
+    margin:0;
+
+    line-height:50px;
+
+    font-size:46px !important;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+/*==================================================
+SIGAP KAKA BRANDING V2
+==================================================*/
+
+.sigap-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:nowrap;
+
+}
+
+/*------------------------------------------
+JUDUL
+------------------------------------------*/
+
+.sigap-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:1px;
+
+    min-height:72px;
+
+    position:relative;
+
+    padding-left:18px;
+
+}
+
+.sigap-title .atas{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+}
+
+.sigap-title .bawah{
+
+    font-size:32px;
+
+    font-weight:800;
+
+    color:#ffd54f;
+
+    margin-top:2px;
+
+}
+
+.sigap-title{
+
+    position:relative;
+
+    padding-left:18px;
+
+}
+
+.sigap-title::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:2px;
+
+    height:68px;
+
+    background:#d8b64a;
+
+    border-radius:2px;
+
+}
+
+.atas{
+
+    display:block;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    line-height:1;
+
+    letter-spacing:1px;
+
+}
+
+.bawah{
+
+    display:block;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    color:#ffd54f;
+
+    line-height:1;
+
+    letter-spacing:1px;
+
+}
+
+/* ==================================================
+   HEADER SIGAP KAKA (GitHub Pages)
+   Ganti blok header lama dengan blok ini
+================================================== */
+
+.header-flex{
+    display:grid;
+    grid-template-columns:300px 1fr 300px;
+    align-items:center;
+    gap:20px;
+    padding:22px 35px;
+    background:linear-gradient(
+    135deg,
+    #0b7d3b 0%,
+    #198754 45%,
+    #35a84b 100%
+);
+
+color:#fff;
+
+border-bottom:5px solid #f4c542;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.header-flex .logo-kanan{
+    width:250px !important;
+    height:auto !important;
+}
+
+.header-logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header-center{
+    text-align:center;
+}
+
+.header-flex .logo-kiri{
+    width:120px !important;
+    height:auto !important;
+}
+
+.header-flex .logo-app{
+    width:130px !important;
+    display:block;
+    margin:0 auto 8px;
+}
+
+.logo-title h1{
+    font-size:60px;
+    font-weight:900;
+    color:#ffffff;
+
+    text-shadow:
+        0 2px 0 #1b5e20,
+        0 5px 12px rgba(0,0,0,.35);
+
+    letter-spacing:2px;
+}
+
+.logo-title p{
+    font-size:28px;
+    margin:8px 0;
+    line-height:1.25;
+}
+
+.logo-title small{
+    display:block;
+    font-size:18px;
+    line-height:1.1;
+    margin:2px 0;
+    color:#f8f4d8;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+.sigap-motto-full{
+    padding:12px 20px;
+}
+
+.sigap-motto-full .motto-text{
+    font-size:22px !important;
+    font-weight:700;
+    color:#d7a92d;
+    letter-spacing:1px;
+}
+
+@media(max-width:768px){
+
+.header-flex{
+    grid-template-columns:1fr;
+    gap:12px;
+}
+
+.header-flex .logo-kiri{
+    width:105px !important;
+    height:auto !important;
+}
+
+.header-flex .logo-kanan{
+    width:200px !important;
+    height:auto !important;
+}
+
+.header-flex .logo-app{
+    width:90px !important;
+}
+
+.logo-title h1{
+    font-size:36px;
+}
+
+.logo-title p{
+    font-size:18px;
+}
+
+.logo-title small{
+    font-size:12px !important;
+    line-height:1.2 !important;
+    margin:1px 0 !important;
+}
+
+.sigap-motto-full .motto-text{
+    font-size:14px !important;
+}
+
+}
+
+/*==================================================
+BADGE TANGGAL
+==================================================*/
+
+.badge-tanggal{
+
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:5px 12px;
+
+background:linear-gradient(
+135deg,
+#E3F2FD,
+#BBDEFB
+);
+
+border:1px solid #90CAF9;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:700;
+
+color:#1565C0;
+
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+transition:.25s;
+
+}
+
+.badge-tanggal:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 16px rgba(21,101,192,.25);
+
+}
+
+/*==================================================
+BADGE SATUAN
+==================================================*/
+
+.badge-satuan{
+
+display:inline-block;
+
+padding:4px 10px;
+
+background:#F5F5F5;
+
+border:1px solid #D6D6D6;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:700;
+
+color:#616161;
+
+min-width:60px;
+
+text-align:center;
+
+}
+
+/*==================================================
+SOP SIGAP KAKA
+==================================================*/
+
+.sop-card{
+
+position:relative;
+
+background:#ffffff;
+
+border-radius:18px;
+
+padding:25px 18px;
+
+text-align:center;
+
+height:100%;
+
+border:1px solid #e9ecef;
+
+transition:.3s;
+
+}
+
+.sop-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+.sop-icon{
+
+width:70px;
+
+height:70px;
+
+margin:auto;
+
+margin-bottom:15px;
+
+border-radius:50%;
+
+background:#198754;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:30px;
+
+}
+
+.sop-no{
+
+position:absolute;
+
+top:12px;
+
+right:15px;
+
+width:30px;
+
+height:30px;
+
+border-radius:50%;
+
+background:#ffc107;
+
+color:#000;
+
+font-weight:bold;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.sop-card h5{
+
+font-weight:700;
+
+margin-bottom:12px;
+
+color:#198754;
+
+}
+
+.sop-card p{
+
+font-size:14px;
+
+color:#666;
+
+line-height:1.6;
+
+margin:0;
+
+}
+
+/*==================================================
+PETA KABUPATEN KUPANG
+==================================================*/
+
+#mapKupang{
+    width:100%;
+    height:280px;
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:15px;
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+}
+
+.map-section{
+
+    margin-top:40px;
+    background:#fff;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.map-section h2{
+
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:600;
+    color:#2E7D32;
+    text-align:center;
+
+}
+
+/*==================================================
+ABOUT SIGAP KAKA
+==================================================*/
+
+.about-section{
+
+padding:70px 20px;
+
+background:linear-gradient(
+180deg,
+#ffffff 0%,
+#f7fbf8 100%
+);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.about-section::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:280px;
+
+height:280px;
+
+background:rgba(25,135,84,.05);
+
+border-radius:50%;
+
+}
+
+.about-section::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-140px;
+
+left:-140px;
+
+width:320px;
+
+height:320px;
+
+background:rgba(255,193,7,.05);
+
+border-radius:50%;
+
+}
+
+.about-header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.about-header h2{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#198754;
+
+margin-bottom:10px;
+
+}
+
+.about-header h2 i{
+
+margin-right:8px;
+
+}
+
+.about-header p{
+
+font-size:16px;
+
+color:#6c757d;
+
+margin:0;
+
+}
+
+.about-card{
+
+background:#ffffff;
+
+border-radius:24px;
+
+padding:40px;
+
+border:1px solid rgba(25,135,84,.08);
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.05),
+
+0 2px 8px rgba(25,135,84,.08);
+
+transition:all .35s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.about-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.10),
+
+0 8px 18px rgba(25,135,84,.15);
+
+}
+
+.about-logo{
+
+width:150px;
+
+max-width:100%;
+
+padding:12px;
+
+background:#ffffff;
+
+border:2px solid rgba(25,135,84,.10);
+
+border-radius:20px;
+
+box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+transition:all .35s ease;
+
+}
+.about-logo:hover{
+
+transform:scale(1.05) rotate(-2deg);
+
+box-shadow:0 16px 35px rgba(25,135,84,.20);
+
+border-color:#198754;
+
+}
+
+.about-card h3{
+
+font-size:36px;
+
+font-weight:800;
+
+color:#198754;
+
+letter-spacing:.5px;
+
+margin-bottom:20px;
+
+position:relative;
+
+display:inline-block;
+
+}
+
+.about-card h3::after{
+
+content:"";
+
+display:block;
+
+width:55px;
+
+height:4px;
+
+margin-top:8px;
+
+border-radius:50px;
+
+background:#ffc107;
+
+}
+
+.about-card p{
+
+font-size:16px;
+
+line-height:2;
+
+color:#555;
+
+text-align:justify;
+
+margin-bottom:18px;
+
+}
+
+.about-card hr{
+
+margin:35px 0;
+
+opacity:.15;
+
+}
+
+.about-item{
+
+height:100%;
+
+background:#ffffff;
+
+padding:30px;
+
+border-radius:20px;
+
+border:1px solid rgba(25,135,84,.08);
+
+text-align:center;
+
+transition:all .35s ease;
+
+box-shadow:0 4px 12px rgba(0,0,0,.04);
+
+}
+
+.about-item:hover{
+
+    background:#ffffff;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    border-color:rgba(25,135,84,.20);
+
+}
+
+.about-icon{
+
+width:75px;
+
+height:75px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:34px;
+
+background:linear-gradient(
+135deg,
+#198754,
+#2fb36c
+);
+
+color:#ffffff;
+
+border-radius:50%;
+
+box-shadow:0 8px 20px rgba(25,135,84,.25);
+
+transition:all .35s ease;
+
+}
+
+.about-item:hover .about-icon{
+
+transform:scale(1.1) rotate(8deg);
+
+box-shadow:0 12px 28px rgba(25,135,84,.35);
+
+}
+
+.about-item h5{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:14px;
+
+color:#198754;
+
+}
+
+.about-item p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#666;
+
+text-align:center;
+
+margin:0;
+
+}
+
+.about-card .badge{
+
+font-size:15px;
+
+border-radius:50px;
+
+padding:10px 28px;
+
+font-weight:600;
+
+letter-spacing:.4px;
+
+}
+
+/*==================================================
+ABOUT MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+.about-section{
+
+padding:45px 15px;
+
+}
+
+.about-card{
+
+padding:25px;
+
+}
+
+.about-logo{
+
+width:110px;
+
+margin-bottom:20px;
+
+}
+
+.about-card h3{
+
+font-size:27px;
+
+text-align:center;
+
+}
+
+.about-card p{
+
+font-size:15px;
+
+text-align:center;
+
+}
+
+.about-header h2{
+
+font-size:28px;
+
+}
+
+.about-item{
+
+margin-bottom:20px;
+
+}
+
+}
+
+/*==================================================
+GARIS JUDUL ABOUT
+==================================================*/
+
+.about-line{
+
+width:90px;
+
+height:4px;
+
+margin:15px auto 20px;
+
+border-radius:50px;
+
+background:linear-gradient(
+90deg,
+#198754,
+#ffc107
+);
+
+}
+
+/*==================================================
+SLIDER KOMODITAS PANGAN
+==================================================*/
+
+.dashboard-list{
+
+    margin-top:10px;
+
+    padding-left:8px;
+
+    font-size:14px;
+
+    line-height:1.55;
+
+    font-weight:600;
+
+}
+
+.dashboard-more{
+
+    display:block;
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    font-style:italic;
+
+    color:rgba(255,255,255,.75);
+
+}
+
+@media (max-width:768px){
+
+    .komoditas-track{
+
+        gap:12px;
+
+        padding:0 10px;
+
+    }
+
+    .komoditas-item{
+
+        width:115px;
+
+        min-width:115px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .komoditas-item{
+        width:90px !important;
+        min-width:90px !important;
+    }
+
+    .komoditas-foto{
+        width:60px !important;
+        height:60px !important;
+    }
+
+    .emoji-komoditas{
+        font-size:32px !important;
+    }
+
+    .komoditas-nama{
+        font-size:11px !important;
+    }
+
+    .komoditas-track{
+        gap:8px !important;
+        padding:0 8px !important;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .komoditas-item{
+
+        width:100px;
+        min-width:100px;
+
+    }
+
+    .komoditas-track{
+
+        gap:10px;
+        padding:0 10px;
+
+    }
+
+}
+
+/* LIST KOMODITAS NAIK TURUN */
+
+/* scrollbar kecil */
+
+.dashboard-list::-webkit-scrollbar{
+
+    width:4px;
+
+}
+
+.dashboard-list::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.5);
+
+    border-radius:10px;
+
+}
+ /* CARD LIST NAIK TURUN */
+
+.dashboard-card:has(.dashboard-list){
+
+    min-height:200px;
+    height:auto;
+    overflow:visible;
+
+}
+
+.dashboard-list{
+
+    max-height:90px;
+    overflow-y:auto;
+    padding-right:5px;
+
+}
+
+/*==================================================
+  EARLY WARNING
+==================================================*/
+
+.ew-card {
+
+    min-height: 125px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+
+.ew-card h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+
+.ew-card p {
+
+    margin: 5px 0 0;
+
+    font-size: 14px;
+
+}
+
+
+.ew-card > i {
+
+    font-size: 42px;
+
+    opacity: 0.85;
+
+}
+
+
+.ew-kritis {
+
+    background: linear-gradient(
+        135deg,
+        #dc2626,
+        #991b1b
+    );
+
+}
+
+
+.ew-waspada {
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #d97706
+    );
+
+}
+
+
+.ew-perhatian {
+
+    background: linear-gradient(
+        135deg,
+        #eab308,
+        #ca8a04
+    );
+
+}
+
+
+.ew-normal {
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #15803d
+    );
+
+}
+
+
+#tbodyEarlyWarning td {
+
+    vertical-align: middle;
+
+}
+
+
+#tbodyEarlyWarning tr:hover {
+
+    background: rgba(22,163,74,0.05);
+
+}
+
+.info-status p {
+    margin-bottom: 6px !important;
+    line-height: 1.2;
+}
+/* TURUNKAN KELOMPOK TOMBOL KIRI */
+.filter-actions{
+    margin-top: 10px !important;
+}
+
+#btnHistori,
+#btnExport{
+    display:none !important;
+}
+
+.filter-actions .btn{
+    width:130px !important;
+    height:38px !important;
+    padding:6px 10px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+    box-sizing:border-box !important;
+}
+
+/* =========================================================
+   FIX FINAL - EARLY WARNING FULL WIDTH
+   SIGAP KAKA
+   Tujuan:
+   - Menghilangkan ruang kosong di sisi kanan daftar
+     "Perubahan Harga Bulanan"
+   - Membuat setiap item Early Warning memenuhi lebar card
+   - Menjaga tampilan desktop dan mobile
+   - Tidak mengubah JavaScript / logika aplikasi
+   ========================================================= */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+/* Area daftar Early Warning */
+#earlyWarningList{
+    width:100%;
+    max-width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    box-sizing:border-box;
+}
+
+/* Setiap baris komoditas memenuhi lebar penuh */
+#earlyWarningList .early-warning-item{
+    width:100%;
+    max-width:100%;
+    min-height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:4px 8px;
+    margin:0;
+    box-sizing:border-box;
+    border-radius:8px;
+    background:rgba(248,249,250,.55);
+}
+
+/* Nama komoditas di kiri */
+#earlyWarningList .early-warning-item > div:first-child{
+    flex:1 1 auto;
+    min-width:0;
+    width:auto;
+}
+
+/* Persentase + badge di kanan */
+#earlyWarningList .early-warning-item > div:last-child{
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:6px;
+    white-space:nowrap;
+    text-align:right;
+}
+
+/* Hover */
+#earlyWarningList .early-warning-item:hover{
+    background:#fff6d8;
+}
+
+/* Tampilan HP */
+@media (max-width:768px){
+
+    #earlyWarningList .early-warning-item{
+        gap:8px;
+        padding:5px 6px;
+        min-height:32px;
+    }
+
+    #earlyWarningList .early-warning-item > div:first-child{
+        font-size:13px;
+    }
+
+    #earlyWarningList .early-warning-item > div:last-child{
+        font-size:12px;
+    }
+
+}
+
+/* Pastikan body utama tidak menyisakan ruang layout horizontal */
+.container-fluid{
+    width:100%;
+    max-width:100%;
+}
+
+/* =========================================================
+   KATEGORI KOMODITAS - 3 KOLOM
+   SIGAP KAKA
+   ========================================================= */
+
+.kategori-buttons{
+    width:100%;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+    margin:4px 0 0;
+    padding:0;
+    box-sizing:border-box;
+    align-items:stretch;
+}
+
+button.kategori-btn{
+    width:100%;
+    min-width:0;
+    height:36px;
+    padding:4px 5px !important;
+    margin:0 !important;
+
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #d8e5d9 !important;
+    border-radius:8px !important;
+
+    background:#fff !important;
+    color:#315b3e !important;
+
+    font-family:'Poppins',sans-serif !important;
+    font-size:10.5px !important;
+    font-weight:600 !important;
+    line-height:1.1 !important;
+    text-align:center;
+
+    white-space:nowrap !important;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+
+    box-shadow:0 1px 4px rgba(25,135,84,.06);
+    transition:.2s ease;
+}
+
+button.kategori-btn:hover{
+    border-color:#198754 !important;
+    background:#f3faf5 !important;
+    color:#198754 !important;
+}
+
+button.kategori-btn.active{
+    background:linear-gradient(135deg,#198754,#157347) !important;
+    color:#fff !important;
+    border-color:#198754 !important;
+    box-shadow:0 3px 7px rgba(25,135,84,.18);
+}
+
+/* HP */
+@media(max-width:575.98px){
+
+    .kategori-buttons{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:5px;
+    }
+
+    button.kategori-btn{
+        height:36px;
+        padding:4px 2px !important;
+        font-size:10px !important;
+        border-radius:7px !important;
+    }
+
+}
+/* =========================================================
+   SIGAP KAKA - BATASI LEBAR DESKTOP
+   HP TETAP MENGGUNAKAN RESPONSIVE YANG SUDAH ADA
+   ========================================================= */
+
+@media (min-width: 992px){
+
+    .container-fluid{
+        width:calc(100% - 40px) !important;
+        max-width:1200px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+
+}
+
+/* =========================================
+   TOMBOL AKSI DI BAWAH TANGGAL
+   ========================================= */
+
+.filter-actions{
+    width:100%;
+    margin-top:8px;
+}
+
+.action-row{
+    display:flex;
+    gap:8px;
+    width:100%;
+    align-items:center;
+}
+
+.action-row .btn{
+    flex:1;
+    height:46px;
+    padding:6px 8px;
+    border-radius:10px;
+    box-sizing:border-box;
+}
+
+.action-spacer{
+    height:103px;
+}
+
+.btn-panduan-full{
+    width:100% !important;
+    height:46px !important;
+    border-radius:10px;
+    box-sizing:border-box;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+}
+
+.filter-actions .btn-panduan-full{
+    width:100% !important;
+}
