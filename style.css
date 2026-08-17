@@ -3665,14 +3665,6 @@ SLIDER KOMODITAS PANGAN
 
     }
 
-    .komoditas-item{
-
-        width:115px;
-
-        min-width:115px;
-
-    }
-
 }
 
 @media (max-width:768px){
