@@ -4193,66 +4193,49 @@ button.kategori-btn.active{
 /* =========================================
    FOOTER HP - LOGO DAN TEKS CENTER
    ========================================= */
-
 @media (max-width:576px){
 
-    .footer{
-        text-align:center !important;
-    }
-
-    .footer .container{
-        padding-left:15px !important;
-        padding-right:15px !important;
-    }
-
-    .footer .row{
-        justify-content:center !important;
-    }
-
-    .footer .col-md-6{
+    .footer .footer-brand{
+        display:block !important;
         width:100% !important;
         text-align:center !important;
     }
 
-    .footer-brand{
-        display:flex !important;
-        flex-direction:column !important;
-        align-items:center !important;
-        justify-content:center !important;
-        text-align:center !important;
+    .footer .footer-logo-box{
+        display:block !important;
         width:100% !important;
-    }
-
-    .footer-logo-box{
-        display:flex !important;
-        align-items:center !important;
-        justify-content:center !important;
+        text-align:center !important;
         margin:0 auto 12px !important;
     }
 
-    .footer-logo-sigap{
+    .footer .footer-logo-sigap{
         display:block !important;
         margin:0 auto !important;
     }
 
-    .footer-brand-text{
-        width:100% !important;
-        text-align:center !important;
-        margin:0 auto !important;
-    }
-
-    .footer-brand-text h5{
-        text-align:center !important;
-        margin:0 0 8px !important;
-    }
-
-    .footer-brand-text p,
-    .footer-brand-text span{
+    .footer .footer-brand-text{
         display:block !important;
         width:100% !important;
+        margin:0 !important;
+        padding:0 !important;
         text-align:center !important;
+    }
+
+    .footer .footer-brand-text h5{
+        display:block !important;
+        width:100% !important;
+        margin:0 auto 8px !important;
+        padding:0 !important;
+        text-align:center !important;
+    }
+
+    .footer .footer-brand-text p,
+    .footer .footer-brand-text span{
+        display:block !important;
+        width:100% !important;
         margin-left:auto !important;
         margin-right:auto !important;
+        text-align:center !important;
     }
 }
 
