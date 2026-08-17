@@ -4189,3 +4189,52 @@ button.kategori-btn.active{
         line-height:1.4 !important;
     }
 }
+
+/* =========================================
+   FOOTER MOBILE - SEMUA CENTER
+   ========================================= */
+
+@media (max-width:576px){
+
+    .footer{
+        text-align:center !important;
+        padding:35px 18px !important;
+    }
+
+    .footer-brand{
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:center !important;
+        text-align:center !important;
+    }
+
+    .footer-brand img{
+        display:block !important;
+        margin:0 auto 12px !important;
+    }
+
+    .footer-brand-text{
+        text-align:center !important;
+        width:100% !important;
+    }
+
+    .footer-brand-text .sigap-title{
+        text-align:center !important;
+        margin:0 0 8px !important;
+    }
+
+    .footer-brand-text span{
+        display:block !important;
+        text-align:center !important;
+    }
+
+    .footer-info{
+        text-align:center !important;
+        width:100% !important;
+    }
+
+    .footer-info p{
+        text-align:center !important;
+        margin-bottom:6px !important;
+    }
+}
